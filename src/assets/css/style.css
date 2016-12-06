@@ -89,6 +89,7 @@ a:focus {
 	min-height: 70px;
 	padding-top: 10px;
 	margin-bottom: 0px;
+
 }
 
 .navbar-brand {
@@ -98,10 +99,12 @@ a:focus {
 
 .navbar-header .navbar-brand {
 	color: white;
+	color: #00b3fe;
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: white;
+	color: #00b3fe;
+	/*color: white;*/
 	font-weight: 700;
 	font-size: 12px;
 }
@@ -116,7 +119,7 @@ a:focus {
 }
 
 .navbar-default {
-	background-color: #384452;
+	background-color: #FFFFFF;
 	border-color: transparent;
 }
 
@@ -205,8 +208,10 @@ a:focus {
 ################################################################# */
 
 #headerwrap {
-	background-color: #00b3fe;
-	min-height: 550px;
+	
+	background-color: #DEE4D6;
+	/*min-height: 550px;*/
+	min-height: 601px;
 	padding-top: 100px;
 	padding-bottom: 0px;
 	text-align: center;
@@ -458,3 +463,30 @@ csmall2 {
 	padding-right: 15px;
 	font-size: 18px;
 }
+
+/* ESTILOS PERSONALIZADOS DE LA APLCIACION */
+
+.show { /*Contenedor principal en donde se mostrara toda la parte dinamica*/
+  /*padding-right: 15px;
+  padding-left: 15px;*/
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #ffffff;
+  height: 601px;
+  background-image: url("../img/fondo_soles_grises.png");
+  background-repeat: no-repeat;
+}
+
+#pie {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background: white;
+}
+
+.containerpie {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #00A6CA;
+  }
