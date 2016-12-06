@@ -490,3 +490,9 @@ csmall2 {
   margin-left: auto;
   background-color: #00A6CA;
   }
+
+  .rowpie {
+  margin-right: -15px;
+  margin-left: -15px;
+  background-color: blue;
+}
