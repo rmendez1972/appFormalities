@@ -32,14 +32,13 @@ export class HeroService {
   }
 
   private extractData(res: Response) {
-    console.log('dentro de extractData');
+
     let body = res.json();
-    alert('res'+res);
+
     return body.data || { };
   }
   private handleError (error: Response | any) {
-    console.log('dentro de handleError');
-    alert('error'+error);
+
     // In a real world app, we might use a remote logging infrastructure
     let errMsg: string;
     if (error instanceof Response) {

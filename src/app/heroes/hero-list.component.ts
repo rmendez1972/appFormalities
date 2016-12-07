@@ -65,10 +65,7 @@ export class HeroListComponent implements OnInit {
 
 
   	ngOnInit() {
-      //this.heroes = this.route.params
-      //.switchMap((params: Params) => {
-      //  this.selectedId = +params['id'];
-      //  return this.getHeroes();
+
       this.getHeroes();
     };
 

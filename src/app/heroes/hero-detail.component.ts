@@ -24,7 +24,7 @@ import 'rxjs/add/operator/switchMap';
         animate('0.5s ease-in')
       ]),
       transition(':leave', [
-        animate('2.0s ease-out', style({
+        animate('0.8s ease-out', style({
           opacity: 0,
           transform: 'translateY(100%)'
         }))
