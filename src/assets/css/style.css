@@ -209,7 +209,7 @@ a:focus {
 
 #headerwrap {
 	
-	background-color: #DEE4D6;
+	background-color: #ffffff;
 	/*min-height: 550px;*/
 	min-height: 601px;
 	padding-top: 100px;
@@ -475,6 +475,8 @@ csmall2 {
   height: 601px;
   background-image: url("../img/fondo_soles_grises.png");
   background-repeat: no-repeat;
+  background-position: bottom left;
+  margin-left: -15px;
 }
 
 #pie {
@@ -483,19 +485,18 @@ csmall2 {
 	background: white;
 }
 
-.containerpie {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: #00A6CA;
-  }
-<<<<<<< HEAD
 
-  .rowpie {
-  margin-right: -15px;
-  margin-left: -15px;
-  background-color: blue;
+.col-lg-4-fondo { /*Estilo personalizado para el footer*/
+  font-family: Conv_Futura-T-OT-Book;
+  font-size: 1.2em;
+  color:#ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 130px;
+  background-image:url("../img/ceiba_blanca_pequeña.png");
+  background-size: 100px 100px;
+  background-position: 0px 10px;
+  background-repeat: no-repeat;
+  line-height: normal;
+
 }
-=======
->>>>>>> bd1da74d19a97299192b7f1c49ace539f0340414
