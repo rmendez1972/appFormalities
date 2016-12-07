@@ -6,6 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 
+
 @Component({
   selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
@@ -47,41 +48,70 @@ export class HeroListComponent implements OnInit {
     return 'relative';
   }
 
+  private errorMessage: string;
+  private heroes: Hero[];
+  private hero:Hero;
+  private x: Observable<Hero[]>;
 
-	heroes:Observable<Hero[]>;
   private selectedId: number;
+
 
   	constructor(
       private router: Router,
       private route: ActivatedRoute,
       private heroservice: HeroService
     )
-    {
-  		/*this.heroservice.getHeroes()
-  			.then(heroes => this.heroes = heroes)
-  			.catch(err => console.log(err) );*/
-  	}
+    {}
+
 
   	ngOnInit() {
-      this.heroes = this.route.params
-      .switchMap((params: Params) => {
-        this.selectedId = +params['id'];
-        return this.heroservice.getHeroes();
-      });
+      //this.heroes = this.route.params
+      //.switchMap((params: Params) => {
+      //  this.selectedId = +params['id'];
+      //  return this.getHeroes();
+      this.getHeroes();
+    };
 
-  	}
+
+
 
   	title = 'Listado de Heroes';
 
 
 
 
+
     selectedHero: Hero;
 
+    getHeroes() {
+        this.x=this.route.params
+        // (+) converts string 'id' to a number
+        .switchMap((params: Params) =>
+        {
+
+          this.selectedId= +params['id'];
+          return this.heroservice.getHeroes()
+        })
+
+        this.x.subscribe(
+                       heroes => this.heroes = heroes,
+                       error =>  this.errorMessage = <any>error);
+
+    };
+
+
+    addHero (name: string) {
+      if (!name) { return; }
+      this.heroservice.addHero(name)
+                     .subscribe(
+                       hero  => this.heroes.push(hero),
+                       error =>  this.errorMessage = <any>error);
+    }
+
   	onSelect(hero: Hero) {
-    	this.router.navigate(['/hero', hero.id]);
+    	this.router.navigate(['/hero', hero.id_direccion]);
 	  }
 
-    isSelected(hero: Hero) { return hero.id === this.selectedId; }
+    isSelected(hero: Hero) {/*alert ('dentro hero.id'+hero.id+' selectedId '+this.selectedId);*/ return hero.id_direccion === this.selectedId; }
 
 }

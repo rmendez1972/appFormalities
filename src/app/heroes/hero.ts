@@ -1,8 +1,10 @@
 export class Hero {
-	public id:number;
-	private name:String;
-  	constructor(public a:number, public b: String ){
-  		this.id=a;
-  		this.name=b;
+	public id_direccion:number;
+	private nombre:String;
+	public id_unidadadministrativa:number;
+  	constructor(public a:number, public b: String,public c:number ){
+  		this.id_direccion=a;
+  		this.nombre=b;
+  		this.id_unidadadministrativa=c;
   	}
 }

@@ -67,7 +67,7 @@ export class HeroDetailComponent implements OnInit {
   hero: Hero;
 
   gotoHeroes() {
-  	let heroId = this.hero ? this.hero.id : null;
+  	let heroId = this.hero ? this.hero.id_direccion : null;
   	// Pass along the hero id if available
   	// so that the HeroList component can select that hero.
   	this.router.navigate(['/heroes', { id: heroId }]);
