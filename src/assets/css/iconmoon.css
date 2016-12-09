@@ -19,7 +19,7 @@
   text-transform: none;
   line-height: 1;
 
-  color:red;
+  /*color:red;*/
   width: 300px;
   height: 300px;
   /*background-color: blue;
@@ -848,12 +848,14 @@
 }
 .icon-cross:before {
   content: "\ea0f";
+
 }
 .icon-checkmark:before {
   content: "\ea10";
 }
 .icon-checkmark2:before {
   content: "\ea11";
+
 }
 .icon-spell-check:before {
   content: "\ea12";
