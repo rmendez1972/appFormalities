@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class HeroService {
 
-   private heroesUrl = 'http://localhost:8080/Tramites/controladordirecciones?operacion=listarPorunidadjson&id_unidadadministrativa=4'; // URL to JSON file o URL to web API
+   private heroesUrl = 'http://localhost:8083/tramites/controladordirecciones?operacion=listarPorunidadjson&id_unidadadministrativa=4'; // URL to JSON file o URL to web API
 
    constructor (private http: Http) {}
 
