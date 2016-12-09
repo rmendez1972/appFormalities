@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { HeroRoutingModule } from './heroes/heroes-routing.module';
+import { SeguimientoRoutingModule } from './seguimientos/seguimientos-routing.module';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menus/menu.component';
-import { HeroesModule } from './heroes/heroes.module';
+import { SeguimientosModule } from './seguimientos/seguimientos.module';
+import { AdjuntosModule } from './adjuntos/adjuntos.module';
 
 //import { MenuModule } from './menus/menu.module';
 
@@ -22,8 +23,9 @@ import { HeroesModule } from './heroes/heroes.module';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    HeroRoutingModule,
-    HeroesModule
+    SeguimientoRoutingModule,
+    SeguimientosModule,
+    AdjuntosModule
 
   ],
   providers: [],

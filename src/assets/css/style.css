@@ -22,7 +22,7 @@
 	}
 
 body {
-	background: #ffffff;
+	background: #E9EBEB;
 	margin: 0;
 	height: 100%;
 	color: #384452;
@@ -33,6 +33,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
+	color: #00A6CA;
 }
 
 p {
@@ -208,8 +209,8 @@ a:focus {
 ################################################################# */
 
 #headerwrap {
-	
-	background-color: #ffffff;
+
+	background-color: #E9EBEB;
 	/*min-height: 550px;*/
 	min-height: 601px;
 	padding-top: 100px;
@@ -223,7 +224,7 @@ a:focus {
 }
 
 #headerwrap h1 {
-	color: white;
+	color: #00A6CA;
 	margin-bottom: 25px;
 }
 

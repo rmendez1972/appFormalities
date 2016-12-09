@@ -1,0 +1,53 @@
+<h2>
+  {{title}}
+</h2>
+<div *ngFor="let solicitud of solicitudes  ">
+	<p style="color:black">
+		Núm. Solicitud:{{solicitud.id_solicitud}}
+	</p>
+	<p style="color:black">
+		Trámite:{{solicitud.tramite}}
+	</p>
+	<p style="color:black">
+		Solicitante:{{solicitud.solicitante}}
+	</p>
+
+</div>
+<div *ngFor="let tramite of tramites  ">
+	<p style="color:black">
+		Subsecretaría:{{tramite.unidadAdministrativa}}
+	</p>
+	<p style="color:black">
+		Dirección:{{tramite.direccion}}
+	</p>
+
+</div>
+
+<table>
+	<thead>
+		<th width="25%">Fecha</th>
+		<th width="50%">Observaciones</th>
+		<th width="10%">Estatus</th>
+		<th width="10%">Adjunto?</th>
+		<th width="10%">Acciones</th>
+	</thead>
+	<tbody *ngFor="let seguimiento of seguimientos">
+		<tr>
+			<td width="25%">{{seguimiento.fecha}}</td>
+			<td width="50%">{{seguimiento.observaciones}}</td>
+			<td width="10%">{{seguimiento.estatus}}</td>
+			<td width="10%" [ngSwitch]="seguimiento.adjunto" >
+				<span *ngSwitchCase="true"><img src="../assets/img/ok.png" ></span>
+  				<span *ngSwitchCase="false"><img src="../assets/img/mal.png" ></span>
+
+  			</td>
+
+			<td width="5%"><img src="../assets/img/reporte_adjuntos.png" width="26px" height="26px" (click)="onSelect(seguimiento)" ></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+

@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="../assets/ico/favicon.ico">
 
     <!--<title>SOLID - Bootstrap 3 Theme</title>-->
-    <title>Aplicacion Tramites y servicios</title>
+    <title>Tramites-SEDUVI</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <!-- Custom styles for this template -->
     <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
-	
+
 	<!-- Fuentes Conv_Futura-T-OT-Book y Conv_roundedelegance -->
     <link href="../assets/css/fonts.css" rel="stylesheet">
 
@@ -32,18 +32,16 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<<<<<<< HEAD
-    <script src="../assets/js/modernizr.js"></script>
-=======
+
     <script src="../assets/js/modernizr-custom.js"></script>
->>>>>>> eaeff41bb35c8d48fb509cc40f7cfd9502bc3686
+
   </head>
 
   <body>
 
     <!-- Construyendo el navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container" style="border-bottom-width:2px;border-bottom-style: solid; border-bottom-color: #00A6CA;padding-bottom:3px">
+      <div class="container" style="border-bottom-width:5px;border-bottom-style: solid; border-bottom-color: #00A6CA;padding-bottom:3px">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -53,8 +51,8 @@
           </button>
           <img src="./assets/img/header2.png" width="75%" height="75%" alt="">
         </div>
-        <div style="font-family:Conv_roundedelegance;font-size:1.25em;display: inline-block; vertical-align: middle;padding-top:10px;">
-        Ventanilla Única de Trámites y Servicios</div>
+        <div style="font-family:Conv_roundedelegance;font-size:1.25em;display: inline-block; vertical-align: middle;padding-top:15px;">
+        Consulta el Estatus de tu Trámite con la SEDUVI</div>
         <!--Colapsando el navbar -->
         <div class="navbar-collapse collapse navbar-right">
           <app-menu></app-menu>
@@ -95,7 +93,7 @@
 		 		<div class="col-lg-6">
 		 			<!--<h4>About</h4>
 		 			<div class="hline-w"></div>-->
-		 			
+
 		 			<div class="col-lg-4-fondo">
 		 				Secretaría de Desarrollo Urbano y vivienda</br>
 		 				Gobierno del Estado de Quintana Roo.</br>
@@ -129,7 +127,7 @@
 		 				<a href="#"><i class="fa fa-tumblr"></i></a>-->
 		 			</p>
 		 		</div>
-		 		
+
 
 
 		 	</div><!--/row -->
@@ -156,11 +154,11 @@
 	var $container = $('.portfolio'),
 		$items = $container.find('.portfolio-item'),
 		portfolioLayout = 'fitRows';
-		
+
 		if( $container.hasClass('portfolio-centered') ) {
 			portfolioLayout = 'masonry';
 		}
-				
+
 		$container.isotope({
 			filter: '*',
 			animationEngine: 'best-available',
@@ -173,12 +171,12 @@
 		masonry: {
 		}
 		}, refreshWaypoints());
-		
+
 		function refreshWaypoints() {
 			setTimeout(function() {
-			}, 1000);   
+			}, 1000);
 		}
-				
+
 		$('nav.portfolio-filter ul a').on('click', function() {
 				var selector = $(this).attr('data-filter');
 				$container.isotope({ filter: selector }, refreshWaypoints());
@@ -186,11 +184,11 @@
 				$(this).addClass('active');
 				return false;
 		});
-		
-		function getColumnNumber() { 
-			var winWidth = $(window).width(), 
+
+		function getColumnNumber() {
+			var winWidth = $(window).width(),
 			columnNumber = 1;
-		
+
 			if (winWidth > 1200) {
 				columnNumber = 5;
 			} else if (winWidth > 950) {
@@ -203,31 +201,31 @@
 				columnNumber = 1;
 			}
 				return columnNumber;
-			}       
-			
+			}
+
 			function setColumns() {
-				var winWidth = $(window).width(), 
-				columnNumber = getColumnNumber(), 
+				var winWidth = $(window).width(),
+				columnNumber = getColumnNumber(),
 				itemWidth = Math.floor(winWidth / columnNumber);
-				
-				$container.find('.portfolio-item').each(function() { 
-					$(this).css( { 
-					width : itemWidth + 'px' 
+
+				$container.find('.portfolio-item').each(function() {
+					$(this).css( {
+					width : itemWidth + 'px'
 				});
 			});
 		}
-		
-		function setPortfolio() { 
+
+		function setPortfolio() {
 			setColumns();
 			$container.isotope('reLayout');
 		}
-			
-		$container.imagesLoaded(function () { 
+
+		$container.imagesLoaded(function () {
 			setPortfolio();
 		});
-		
-		$(window).on('resize', function () { 
-		setPortfolio();          
+
+		$(window).on('resize', function () {
+		setPortfolio();
 	});
 })(jQuery);
 </script>
