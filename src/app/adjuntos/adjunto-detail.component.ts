@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, HostBinding, trigger, transition, animate, style, state } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Hero } from './hero';
-import {HeroService} from './hero.service';
+import { Adjunto } from './adjunto';
+import {AdjuntoService} from './adjunto.service';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -49,14 +49,14 @@ export class AdjuntoDetailComponent implements OnInit {
   constructor(
   	private route: ActivatedRoute,
   	private router: Router,
-  	private service: HeroService
+  	private service: AdjuntoService
   ) { }
 
   ngOnInit() {
   	this.route.params
     // (+) converts string 'id' to a number
-    .switchMap((params: Params) => this.service.getHero(+params['id']))
-    .subscribe((hero: Hero) => this.hero = hero);
+    .switchMap((params: Params) => this.service.getAdjunto(+params['id']))
+    .subscribe((adjunto: Adjunto) => this.adjunto = adjunto);
   }
 
   title: 'detalle';
@@ -64,13 +64,13 @@ export class AdjuntoDetailComponent implements OnInit {
   submitted = false;
   onSubmit() { this.submitted = true; }
   //@Input()
-  hero: Hero;
+  adjunto: Adjunto;
 
-  gotoHeroes() {
-  	let heroId = this.hero ? this.hero.id_solicitante : null;
+  gotoAdjuntos() {
+  	let adjuntoId = this.adjunto ? this.adjunto.id_adjunto : null;
   	// Pass along the hero id if available
   	// so that the HeroList component can select that hero.
-  	this.router.navigate(['/heroes', { id: heroId }]);
+  	this.router.navigate(['/adjuntos', { id: adjuntoId }]);
   }
 
 }

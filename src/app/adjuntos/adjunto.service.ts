@@ -1,65 +1,64 @@
 import { Injectable } from '@angular/core';
-import { Solicitante } from './solicitante';
-import { Solicitud } from './solicitud';
-import { Tramite } from './tramite';
-import { Seguimiento } from './seguimiento';
+import { Adjunto } from './adjunto';
+import { Solicitante } from '../seguimientos/solicitante';
+import { Solicitud } from '../seguimientos/solicitud';
+import { Tramite } from '../seguimientos/tramite';
+import { Seguimiento } from '../seguimientos/seguimiento';
 import { Http, Response, Headers,RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 //import {Observable} from 'rxjs/Rx';
 
 
-
-
-
-
 @Injectable()
-export class SeguimientoService {
+export class AdjuntoService {
 
-   private seguimientosUrl = 'http://localhost:8080/Tramites/controladorseguimiento?operacion=listarjson&id_solicitud=48'; // URL to JSON file o URL to web API
+   private adjuntosUrl = 'http://localhost:8080/Tramites/controladoradjunto?operacion=listarjson&id_seguimiento='; // URL to JSON file o URL to web API
 
    constructor (private http: Http) {}
 
-	//getHeroes
-  getSolicitantes(): Observable<Solicitante[]> {
+	//getAdjuntos
+  getAdjuntos(id: number): Observable<Adjunto[]> {
     //alert('dentro de getheroes');
- 		return this.http.get(this.seguimientosUrl)
+ 		return this.http.get(this.adjuntosUrl+id)
                     .map(this.extractData)
                     .catch(this.handleError);
 	}
 
+  //getSolicitantes
+  getSolicitantes(id: number): Observable<Solicitante[]> {
+    //alert('dentro de getheroes');
+     return this.http.get(this.adjuntosUrl+id)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
+
   //getSolicitudes
-  getSolicitudes(): Observable<Solicitud[]> {
+  getSolicitudes(id: number): Observable<Solicitud[]> {
     //alert('dentro de getsolicitudes');
-     return this.http.get(this.seguimientosUrl)
+     return this.http.get(this.adjuntosUrl+id)
                     .map(this.extractDataSolic)
                     .catch(this.handleError);
   }
 
 
   //getSolicitudes
-  getTramites(): Observable<Tramite[]> {
+  getTramites(id: number): Observable<Tramite[]> {
     //alert('dentro de getsolicitudes');
-     return this.http.get(this.seguimientosUrl)
+     return this.http.get(this.adjuntosUrl+id)
                     .map(this.extractDataTram)
                     .catch(this.handleError);
   }
 
 
   //getSolicitudes
-  getSeguimientos(): Observable<Seguimiento[]> {
+  getSeguimientos(id: number): Observable<Seguimiento[]> {
     //alert('dentro de getsolicitudes');
-     return this.http.get(this.seguimientosUrl)
+     return this.http.get(this.adjuntosUrl+id)
                     .map(this.extractDataSeg)
                     .catch(this.handleError);
   }
 
-  addSolicitante (name: string): Observable<Solicitante> {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-    return this.http.post(this.seguimientosUrl, { name }, options)
-                    .map(this.extractData)
-                    .catch(this.handleError);
-  }
+
 
   private extractData(res: Response) {
     //alert('res '+res);
@@ -86,12 +85,13 @@ export class SeguimientoService {
     return body.tramite || { };
   }
 
+
   private extractDataSeg(res: Response) {
     //alert('res en datasolic '+res);
     let body = res.json();
     //alert('body '+body);
 
-    return body.seguimientos || { };
+    return body.seguimiento || { };
   }
 
 
@@ -110,10 +110,10 @@ export class SeguimientoService {
     return Observable.throw(errMsg);
   }
 
-  //getHero
-  getSolicitante(id: number): Observable<Solicitante> {
-    return this.getSolicitantes()
-               .map(solicitantes => solicitantes.find(solicitante => solicitante.id_solicitante === id));
+  //getAdjunto
+  getAdjunto(id: number): Observable<Adjunto> {
+    return this.getAdjuntos(id)
+               .map(adjuntos => adjuntos.find(adjunto => adjunto.id_adjunto === id));
   }
 
 }

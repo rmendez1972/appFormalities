@@ -1,9 +1,9 @@
 import { Component, OnInit, HostBinding, trigger, transition, animate, style, state } from '@angular/core';
-import { Solicitante } from './solicitante';
-import { Solicitud } from './solicitud';
-import { Tramite } from './tramite';
-import { Seguimiento } from './seguimiento';
-import { SeguimientoService} from './seguimiento.service';
+import { Adjunto } from './adjunto';
+import { Solicitud} from '../seguimientos/solicitud';
+import { Tramite } from '../seguimientos/tramite';
+import { Seguimiento } from '../seguimientos/seguimiento';
+import {AdjuntoService} from './adjunto.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
@@ -11,9 +11,9 @@ import { Observable } from 'rxjs/Observable';
 
 
 @Component({
-  selector: 'app-seguimiento-list',
-  templateUrl: './seguimiento-list.component.html',
-  styleUrls: ['./seguimiento-list.component.css'],
+  selector: 'app-adjunto-list',
+  templateUrl: './adjunto-list.component.html',
+  styleUrls: ['./adjunto-list.component.css'],
   animations: [
     trigger('routeAnimation', [
       state('*',
@@ -38,7 +38,7 @@ import { Observable } from 'rxjs/Observable';
     ])
   ]
 })
-export class SeguimientoListComponent implements OnInit {
+export class AdjuntoListComponent implements OnInit {
   @HostBinding('@routeAnimation') get routeAnimation() {
     return true;
   }
@@ -52,15 +52,17 @@ export class SeguimientoListComponent implements OnInit {
   }
 
   private errorMessage: string;
-  private solicitantes: Solicitante[];
+  private adjuntos: Adjunto[];
   private solicitudes: Solicitud[];
   private tramites: Tramite[];
   private seguimientos: Seguimiento[];
-  private solicitante:Solicitante;
-  private x: Observable<Solicitante[]>;
+
+  private adjunto:Adjunto;
+  private x: Observable<Adjunto[]>;
   private y: Observable<Solicitud[]>;
   private z: Observable<Tramite[]>;
   private a: Observable<Seguimiento[]>;
+
 
   private selectedId: number;
 
@@ -69,41 +71,43 @@ export class SeguimientoListComponent implements OnInit {
   	constructor(
       private router: Router,
       private route: ActivatedRoute,
-      private seguimientoservice: SeguimientoService
+      private adjuntoservice: AdjuntoService
     )
     {}
 
 
   	ngOnInit() {
 
-      this.getSolicitantes();
+      this.getAdjuntos();
       this.getSolicitud();
       this.getTramite();
       this.getSeguimiento();
+
     };
 
 
 
 
-  	title = 'Listado de Seguimientos';
-    selectedSolicitante: Solicitante;
+  	title = 'Listado de Archivos Adjuntos';
+    selectedAdjunto: Adjunto;
 
-    getSolicitantes() {
+    getAdjuntos() {
         this.x=this.route.params
         // (+) converts string 'id' to a number
         .switchMap((params: Params) =>
         {
 
           this.selectedId= +params['id'];
-          return this.seguimientoservice.getSolicitantes()
+          return this.adjuntoservice.getAdjuntos(this.selectedId)
         })
 
         this.x.subscribe(
-                       solicitantes => this.solicitantes = solicitantes,
+                       adjuntos => this.adjuntos = adjuntos,
                        error =>  this.errorMessage = <any>error);
 
 
     };
+
 
     getSolicitud() {
         this.y=this.route.params
@@ -112,7 +116,7 @@ export class SeguimientoListComponent implements OnInit {
         {
 
           //this.selectedId= +params['id'];
-          return this.seguimientoservice.getSolicitudes()
+          return this.adjuntoservice.getSolicitudes(this.selectedId)
         })
 
         this.y.subscribe(
@@ -128,7 +132,7 @@ export class SeguimientoListComponent implements OnInit {
         {
 
           //this.selectedId= +params['id'];
-          return this.seguimientoservice.getTramites()
+          return this.adjuntoservice.getTramites(this.selectedId)
         })
 
         this.z.subscribe(
@@ -145,7 +149,7 @@ export class SeguimientoListComponent implements OnInit {
         {
 
           //this.selectedId= +params['id'];
-          return this.seguimientoservice.getSeguimientos()
+          return this.adjuntoservice.getSeguimientos(this.selectedId)
         })
 
         this.a.subscribe(
@@ -156,19 +160,18 @@ export class SeguimientoListComponent implements OnInit {
 
 
 
+    gotoSeguimientos() {
+    //let seguimientoId = this.adjuntos ? this.adjuntos.id_seguimiento : null;
+    // Pass along the hero id if available
+    // so that the HeroList component can select that hero.
+    this.router.navigate(['/seguimientos', { id: this.selectedId }]);
+  }
 
-    addSolicitante (name: string) {
-      if (!name) { return; }
-      this.seguimientoservice.addSolicitante(name)
-                     .subscribe(
-                       solicitante  => this.solicitantes.push(solicitante),
-                       error =>  this.errorMessage = <any>error);
-    }
 
-  	onSelect(seguimiento: Seguimiento) {
+  	/*onSelect(seguimiento: Seg) {
     	this.router.navigate(['/adjunto', seguimiento.id_seguimiento]);
 	  }
 
-    isSelected(seguimiento: Seguimiento) {/*alert ('dentro hero.id'+hero.id+' selectedId '+this.selectedId);*/ return seguimiento.id_seguimiento === this.selectedId; }
+    */
 
 }

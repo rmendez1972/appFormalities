@@ -2,10 +2,10 @@ import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
 
-import { HeroListComponent }    from './hero-list.component';
-import { AdjuntoDetailComponent }  from './adjunto-detail.component';
+import { AdjuntoListComponent }    from './adjunto-list.component';
 
-import { HeroService } from './hero.service';
+
+import { AdjuntoService } from './adjunto.service';
 
 import { AdjuntoRoutingModule } from './adjuntos-routing.module';
 
@@ -16,11 +16,11 @@ import { AdjuntoRoutingModule } from './adjuntos-routing.module';
     AdjuntoRoutingModule
   ],
   declarations: [
-    HeroListComponent,
-    AdjuntoDetailComponent
+    AdjuntoListComponent
+
   ],
   providers: [
-    HeroService
+    AdjuntoService
   ]
 })
 export class AdjuntosModule {}

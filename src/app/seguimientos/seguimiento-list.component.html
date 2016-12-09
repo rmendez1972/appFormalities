@@ -31,7 +31,7 @@
 		<th width="10%">Adjunto?</th>
 		<th width="10%">Acciones</th>
 	</thead>
-	<tbody *ngFor="let seguimiento of seguimientos">
+	<tbody *ngFor="let seguimiento of seguimientos" [class.selected]="isSelected(seguimiento)">
 		<tr>
 			<td width="25%">{{seguimiento.fecha}}</td>
 			<td width="50%">{{seguimiento.observaciones}}</td>
