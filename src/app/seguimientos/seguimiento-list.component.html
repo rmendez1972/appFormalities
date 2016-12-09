@@ -38,3 +38,35 @@
   	</tbody>
   </table>
 </div>
+<<<<<<< HEAD
+=======
+
+<table>
+	<thead>
+		<th width="25%">Fecha</th>
+		<th width="50%">Observaciones</th>
+		<th width="10%">Estatus</th>
+		<th width="10%">Adjunto?</th>
+		<th width="10%">Acciones</th>
+	</thead>
+	<tbody *ngFor="let seguimiento of seguimientos" [class.selected]="isSelected(seguimiento)">
+		<tr>
+			<td width="25%">{{seguimiento.fecha}}</td>
+			<td width="50%">{{seguimiento.observaciones}}</td>
+			<td width="10%">{{seguimiento.estatus}}</td>
+			<td width="10%" [ngSwitch]="seguimiento.adjunto" >
+				<span *ngSwitchCase="true"><img src="../assets/img/ok.png" ></span>
+  				<span *ngSwitchCase="false"><img src="../assets/img/mal.png" ></span>
+
+  			</td>
+
+			<td width="5%"><img src="../assets/img/reporte_adjuntos.png" width="26px" height="26px" (click)="onSelect(seguimiento)" ></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
+>>>>>>> 667620897e2f4663baff5fb0b737aae9f88e3d06
