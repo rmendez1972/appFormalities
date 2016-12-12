@@ -15,15 +15,9 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class SeguimientoService {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-   private seguimientosUrl = 'http://localhost:8083/tramites/controladorseguimiento?operacion=listarjson&id_solicitud=45'; // URL to JSON file o URL to web API
-=======
+
    private seguimientosUrl = 'http://localhost:8080/Tramites/controladorseguimiento?operacion=listarjson&id_solicitud=48'; // URL to JSON file o URL to web API
->>>>>>> 667620897e2f4663baff5fb0b737aae9f88e3d06
-=======
-   private seguimientosUrl = 'http://localhost:8080/Tramites/controladorseguimiento?operacion=listarjson&id_solicitud=47'; // URL to JSON file o URL to web API
->>>>>>> 821b388c569cd3242d3b877fe7195894748d3220
+
 
    constructor (private http: Http) {}
 
