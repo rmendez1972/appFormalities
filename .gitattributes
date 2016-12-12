@@ -1,7 +1,7 @@
  src/assets/css/* linguist-vendored
-src/app/*.ts linguist-language=Java
-src/app/adjuntos/*.ts linguist-language=Java
-src/app/seguimientos/*.ts linguist-language=Java
-src/app/*.html linguist-language=Java
-src/app/adjuntos/*.html linguist-language=Java
-src/app/seguimientos/*.html linguist-language=Java
+src/app/*.ts linguist-language=JavaScript
+src/app/adjuntos/*.ts linguist-language=JavaScript
+src/app/seguimientos/*.ts linguist-language=JavaScript
+src/app/*.html linguist-language=JavaScript
+src/app/adjuntos/*.html linguist-language=JavaScript
+src/app/seguimientos/*.html linguist-language=JavaScript
