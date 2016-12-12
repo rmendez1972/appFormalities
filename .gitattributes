@@ -2,3 +2,6 @@
 src/app/*.ts linguist-language=angular
 src/app/adjuntos/*.ts linguist-language=angular
 src/app/seguimientos/*.ts linguist-language=angular
+src/app/*.html linguist-language=angular
+src/app/adjuntos/*.html linguist-language=angular
+src/app/seguimientos/*.html linguist-language=angular
