@@ -26,35 +26,11 @@
   	<tbody *ngFor="let adjunto of adjuntos">
   		<tr>
 
-  			<td width="75%"><a href="http://localhost:8080/tramites/adjuntos/{{adjunto.nombre}}" download="{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
-  			<td width="5%"><a href="http://localhost:8080/tramites/adjuntos/{{adjunto.nombre}}" download="{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></td>
+  			<td width="75%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
+  			<td width="5%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></td>
   			<td width="20%">{{adjunto.nombreusuario}}</td>
   		</tr>
   	</tbody>
   </table>
 </div>
-<<<<<<< HEAD
-=======
-
-<table>
-	<thead>
-
-		<th width="75%">Nombre de Archivo Adjunto</th>
-		<th width="5%"></th>
-		<th width="20%">Usuario que Adjunta</th>
-
-	</thead>
-	<tbody *ngFor="let adjunto of adjuntos">
-		<tr>
-
-			<td width="75%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
-			<td width="5%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></td>
-			<td width="20%">{{adjunto.nombreusuario}}</td>
-
-
-
-		</tr>
-	</tbody>
-</table>
->>>>>>> 3e9532bab8bea2cd4a17639cbb6fb36d6e54f490
 <button  class="btn btn-primary btn-lg" (click)="gotoSeguimientos()">Regresar</button>
