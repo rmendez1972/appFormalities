@@ -2,7 +2,7 @@
   {{title}}
 </h2>
 
-<div style="text-align:left;color:#000000;border: 1px solid #00A6CA;border-radius: 8px;padding:5px;">
+<div class="datos">
   <div *ngFor="let solicitud of solicitudes"  >
   	<div><strong>Núm. Solicitud: </strong>{{solicitud.id_solicitud}}</div>
   	<div><strong>Trámite: </strong>{{solicitud.tramite}}</div>
@@ -13,9 +13,9 @@
   	<div><strong>Dirección: </strong>{{tramite.direccion}}</div>
   </div>
 </div>
-<div class="table-responsive" style="margin-top:20px; border: 1px solid #00A6CA;border-radius: 8px;padding:5px;">
-  <table class="table table-condensed table-hover" style="text-align:left">
-  	<thead  style="color: #00A6CA;">
+<div class="table-responsive listado">
+  <table class="table table-condensed table-hover">
+  	<thead  style="color: #7b7d80;">
   		<th width="25%">Fecha</th>
   		<th width="50%">Observaciones</th>
   		<th width="10%">Estatus</th>
@@ -38,4 +38,3 @@
   	</tbody>
   </table>
 </div>
-

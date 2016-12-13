@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menus/menu.component';
 import { SeguimientosModule } from './seguimientos/seguimientos.module';
 import { AdjuntosModule } from './adjuntos/adjuntos.module';
+import { BuscarSolicitudComponent } from './buscar-solicitud/buscar-solicitud.component';
 
 //import { MenuModule } from './menus/menu.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    BuscarSolicitudComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,6 @@ import { AdjuntosModule } from './adjuntos/adjuntos.module';
 
   ],
   providers: [],
-  bootstrap: [AppComponent,MenuComponent]
+  bootstrap: [AppComponent, MenuComponent, BuscarSolicitudComponent]
 })
 export class AppModule { }

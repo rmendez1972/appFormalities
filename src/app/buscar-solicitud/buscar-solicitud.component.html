@@ -1,0 +1,16 @@
+<!--<p>
+  buscar-solicitud works!
+</p>-->
+
+<div class="col-sm-3 col-md-3 pull-right pull-right"> <!--Botón de búsqueda de solicitud-->
+  <form class="navbar-form" role="search">
+  <div class="input-group">
+      <input type="number" class="form-control" placeholder="Núm. Solicitud" name="srch-term" id="srch-term">
+      <div class="input-group-btn">
+          <!--<button class="btn btn-default" type="submit" required (click)="app-seguimiento-list" ><i class="glyphicon glyphicon-search"></i></button>-->
+          <button class="btn btn-default" type="submit" required ><a routerLink="/seguimientos" routerLinkActive="active"><i class="glyphicon glyphicon-search"></i></a></button>
+          <!--<a routerLink="/seguimientos" routerLinkActive="active">Seguimientos</a>-->
+      </div>
+  </div>
+  </form>
+</div><!--Fin del botón de búsqueda de solicitud-->

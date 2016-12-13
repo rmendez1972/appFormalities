@@ -506,3 +506,21 @@ csmall2 {
   line-height: normal;
 
 }
+
+/*Clase para el div de los datos generales de la solicidtud*/
+.datos{
+	text-align:left;
+	color:#7b7d80;
+	border: 2px solid #7b7d80;
+	border-radius: 8px;
+	padding:5px;
+}
+
+.listado {
+	text-align:left;
+	color:#7b7d80;
+	margin-top:20px;
+	border: 2px solid #7b7d80;
+	border-radius: 8px;
+	padding:5px;
+}

@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AdjuntoService {
 
-   private adjuntosUrl = 'http://localhost:8080/Tramites/controladoradjunto?operacion=listarjson&id_seguimiento='; // URL to JSON file o URL to web API
+   private adjuntosUrl = 'http://localhost:8083/tramites/controladoradjunto?operacion=listarjson&id_seguimiento='; // URL to JSON file o URL to web API
 
    constructor (private http: Http) {}
 

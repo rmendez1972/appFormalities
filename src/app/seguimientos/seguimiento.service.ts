@@ -16,7 +16,7 @@ import { Observable } from 'rxjs/Observable';
 export class SeguimientoService {
 
 
-   private seguimientosUrl = 'http://localhost:8080/Tramites/controladorseguimiento?operacion=listarjson&id_solicitud=48'; // URL to JSON file o URL to web API
+   private seguimientosUrl = 'http://localhost:8083/tramites/controladorseguimiento?operacion=listarjson&id_solicitud=45'; // URL to JSON file o URL to web API
 
 
    constructor (private http: Http) {}

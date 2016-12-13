@@ -1,58 +1,36 @@
 <h2>
   {{title}}
 </h2>
-
-<div *ngFor="let solicitud of solicitudes  ">
-	<p style="color:black">
-		Núm. Solicitud:{{solicitud.id_solicitud}}
-	</p>
-	<p style="color:black">
-		Trámite:{{solicitud.tramite}}
-	</p>
-	<p style="color:black">
-		Solicitante:{{solicitud.solicitante}}
-	</p>
-
-</div>
-<div *ngFor="let tramite of tramites  ">
-	<p style="color:black">
-		Subsecretaría:{{tramite.unidadAdministrativa}}
-	</p>
-	<p style="color:black">
-		Dirección:{{tramite.direccion}}
-	</p>
-
-</div>
-<div *ngFor="let seguimiento of seguimientos">
-	<p style="color:black">
-		Seguimiento:{{seguimiento.observaciones}}
-	</p>
-
-
+<div class="datos">
+  <div *ngFor="let solicitud of solicitudes">
+  	<div><strong>Núm. Solicitud: </strong>{{solicitud.id_solicitud}}</div>
+  	<div><strong>Trámite: </strong>{{solicitud.tramite}}</div>
+  	<div><strong>Solicitante: </strong>{{solicitud.solicitante}}</div>
+  </div>
+  <div *ngFor="let tramite of tramites">
+  	<div><strong>Subsecretaría: </strong>{{tramite.unidadAdministrativa}}</div>
+  	<div><strong>Dirección: </strong>{{tramite.direccion}}</div>
+  </div>
+    <div *ngFor="let seguimiento of seguimientos">
+  	  <div><strong>Seguimiento:</strong>{{seguimiento.observaciones}}	</div>
+    </div>
 </div>
 
-<table>
-	<thead>
+<div class="table-responsive listado">
+  <table class="table table-condensed table-hover">
+  	<thead>
+  		<th width="75%">Nombre de Archivo Adjunto</th>
+  		<th width="5%"></th>
+  		<th width="20%">Usuario que Adjunta</th>
+  	</thead>
+  	<tbody *ngFor="let adjunto of adjuntos">
+  		<tr>
 
-		<th width="75%">Nombre de Archivo Adjunto</th>
-		<th width="5%"></th>
-		<th width="20%">Usuario que Adjunta</th>
-
-	</thead>
-	<tbody *ngFor="let adjunto of adjuntos">
-		<tr>
-
-			<td width="75%"><a href="http://localhost:8080/tramites/adjuntos/{{adjunto.nombre}}" download="{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
-			<td width="5%"><a href="http://localhost:8080/tramites/adjuntos/{{adjunto.nombre}}" download="{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></td>
-			<td width="20%">{{adjunto.nombreusuario}}</td>
-
-
-
-		</tr>
-	</tbody>
-</table>
+  			<td width="75%"><a href="http://localhost:8080/tramites/adjuntos/{{adjunto.nombre}}" download="{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
+  			<td width="5%"><a href="http://localhost:8080/tramites/adjuntos/{{adjunto.nombre}}" download="{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></td>
+  			<td width="20%">{{adjunto.nombreusuario}}</td>
+  		</tr>
+  	</tbody>
+  </table>
+</div>
 <button  class="btn btn-primary btn-lg" (click)="gotoSeguimientos()">Regresar</button>
-
-
-
-
