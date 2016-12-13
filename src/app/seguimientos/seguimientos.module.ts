@@ -4,10 +4,11 @@ import { FormsModule }    from '@angular/forms';
 
 import { SeguimientoListComponent }    from './seguimiento-list.component';
 import { SeguimientoDetailComponent }  from './seguimiento-detail.component';
-
+import { ServiceUrl } from '../serviceUrl';
 import { SeguimientoService } from './seguimiento.service';
 
 import { SeguimientoRoutingModule } from './seguimientos-routing.module';
+
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { SeguimientoRoutingModule } from './seguimientos-routing.module';
     SeguimientoDetailComponent
   ],
   providers: [
-    SeguimientoService
+    ServiceUrl,SeguimientoService
   ]
 })
 export class SeguimientosModule {}

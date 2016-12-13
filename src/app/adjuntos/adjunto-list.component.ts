@@ -62,6 +62,7 @@ export class AdjuntoListComponent implements OnInit {
   private y: Observable<Solicitud[]>;
   private z: Observable<Tramite[]>;
   private a: Observable<Seguimiento[]>;
+  private adjuntosruta: string;
 
 
   private selectedId: number;
@@ -82,6 +83,7 @@ export class AdjuntoListComponent implements OnInit {
       this.getSolicitud();
       this.getTramite();
       this.getSeguimiento();
+      this.getAdjuntosruta();
 
     };
 
@@ -90,6 +92,12 @@ export class AdjuntoListComponent implements OnInit {
 
   	title = 'Listado de Archivos Adjuntos';
     selectedAdjunto: Adjunto;
+
+    getAdjuntosruta(){this.adjuntosruta=String(
+      this.adjuntoservice.getAdjuntosruta());
+      console.log(this.adjuntosruta);
+       alert(this.adjuntosruta);
+  }
 
     getAdjuntos() {
         this.x=this.route.params
