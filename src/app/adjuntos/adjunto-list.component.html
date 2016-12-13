@@ -42,8 +42,8 @@
 	<tbody *ngFor="let adjunto of adjuntos">
 		<tr>
 
-			<td width="75%"><a href="http://localhost:8080/tramites/adjuntos/{{adjunto.nombre}}" download="{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
-			<td width="5%"><a href="http://localhost:8080/tramites/adjuntos/{{adjunto.nombre}}" download="{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></td>
+			<td width="75%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
+			<td width="5%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></td>
 			<td width="20%">{{adjunto.nombreusuario}}</td>
 
 

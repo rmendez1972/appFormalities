@@ -6,7 +6,7 @@ import { Seguimiento } from './seguimiento';
 import { Http, Response, Headers,RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 //import {Observable} from 'rxjs/Rx';
-
+import { ServiceUrl } from '../serviceUrl';
 
 
 
@@ -15,11 +15,11 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class SeguimientoService {
 
+  private seguimientosUrl: string;
 
-   private seguimientosUrl = 'http://localhost:8080/Tramites/controladorseguimiento?operacion=listarjson&id_solicitud=48'; // URL to JSON file o URL to web API
 
 
-   constructor (private http: Http) {}
+  constructor (private http: Http, private url:ServiceUrl) {this.seguimientosUrl=String(this.url.getUrl());}
 
 	//getHeroes
   getSolicitantes(): Observable<Solicitante[]> {

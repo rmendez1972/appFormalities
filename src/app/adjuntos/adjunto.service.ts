@@ -4,6 +4,7 @@ import { Solicitante } from '../seguimientos/solicitante';
 import { Solicitud } from '../seguimientos/solicitud';
 import { Tramite } from '../seguimientos/tramite';
 import { Seguimiento } from '../seguimientos/seguimiento';
+import { ServiceUrl } from '../serviceUrl';
 import { Http, Response, Headers,RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 //import {Observable} from 'rxjs/Rx';
@@ -12,9 +13,19 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AdjuntoService {
 
-   private adjuntosUrl = 'http://localhost:8080/Tramites/controladoradjunto?operacion=listarjson&id_seguimiento='; // URL to JSON file o URL to web API
+   private adjuntosUrl :string;
+   private adjuntosdescarga :string;
 
-   constructor (private http: Http) {}
+
+   constructor (private http: Http, private url:ServiceUrl) {
+     this.adjuntosUrl=String(this.url.getUrladjuntos());
+     this.adjuntosdescarga=String(this.url.getUrladjuntosdescarga());
+
+
+   }
+
+
+  getAdjuntosruta(){return this.adjuntosdescarga}
 
 	//getAdjuntos
   getAdjuntos(id: number): Observable<Adjunto[]> {

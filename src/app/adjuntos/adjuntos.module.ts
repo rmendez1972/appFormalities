@@ -4,7 +4,7 @@ import { FormsModule }    from '@angular/forms';
 
 import { AdjuntoListComponent }    from './adjunto-list.component';
 
-
+import { ServiceUrl } from '../serviceUrl';
 import { AdjuntoService } from './adjunto.service';
 
 import { AdjuntoRoutingModule } from './adjuntos-routing.module';
@@ -20,7 +20,7 @@ import { AdjuntoRoutingModule } from './adjuntos-routing.module';
 
   ],
   providers: [
-    AdjuntoService
+    ServiceUrl,AdjuntoService
   ]
 })
 export class AdjuntosModule {}
