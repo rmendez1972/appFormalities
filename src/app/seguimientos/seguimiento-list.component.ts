@@ -5,6 +5,7 @@ import { Tramite } from './tramite';
 import { Seguimiento } from './seguimiento';
 import { SeguimientoService} from './seguimiento.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+//import { AuthGuard } from '../_guards/index';
 
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
@@ -51,6 +52,8 @@ export class SeguimientoListComponent implements OnInit {
     return 'relative';
   }
 
+
+
   private errorMessage: string;
   private solicitantes: Solicitante[];
   private solicitudes: Solicitud[];
@@ -77,6 +80,7 @@ export class SeguimientoListComponent implements OnInit {
   	ngOnInit() {
 
       this.getSolicitantes();
+      alert('solicitantes '+this.solicitantes);
       this.getSolicitud();
       this.getTramite();
       this.getSeguimiento();
@@ -99,6 +103,7 @@ export class SeguimientoListComponent implements OnInit {
         })
 
         this.x.subscribe(
+
                        solicitantes => this.solicitantes = solicitantes,
                        error =>  this.errorMessage = <any>error);
 

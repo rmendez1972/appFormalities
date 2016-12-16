@@ -21,9 +21,9 @@ export class SeguimientoService {
 
   constructor (private http: Http, private url:ServiceUrl) {this.seguimientosUrl=String(this.url.getUrl());}
 
-	//getHeroes
+	//getSolicitantes
   getSolicitantes(): Observable<Solicitante[]> {
-    //alert('dentro de getheroes');
+    alert(this.seguimientosUrl);
  		return this.http.get(this.seguimientosUrl)
                     .map(this.extractData)
                     .catch(this.handleError);
@@ -31,25 +31,25 @@ export class SeguimientoService {
 
   //getSolicitudes
   getSolicitudes(): Observable<Solicitud[]> {
-    //alert('dentro de getsolicitudes');
+
      return this.http.get(this.seguimientosUrl)
                     .map(this.extractDataSolic)
                     .catch(this.handleError);
   }
 
 
-  //getSolicitudes
+  //getTramites
   getTramites(): Observable<Tramite[]> {
-    //alert('dentro de getsolicitudes');
+
      return this.http.get(this.seguimientosUrl)
                     .map(this.extractDataTram)
                     .catch(this.handleError);
   }
 
 
-  //getSolicitudes
+  //getSeguimientos
   getSeguimientos(): Observable<Seguimiento[]> {
-    //alert('dentro de getsolicitudes');
+
      return this.http.get(this.seguimientosUrl)
                     .map(this.extractDataSeg)
                     .catch(this.handleError);
@@ -64,8 +64,9 @@ export class SeguimientoService {
   }
 
   private extractData(res: Response) {
-    //alert('res '+res);
+
     let body = res.json();
+
 
     return body.data || { };
   }
@@ -98,7 +99,7 @@ export class SeguimientoService {
 
 
   private handleError (error: Response | any) {
-
+    alert('dentro de handlerror ');
     // In a real world app, we might use a remote logging infrastructure
     let errMsg: string;
     if (error instanceof Response) {

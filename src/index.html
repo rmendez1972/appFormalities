@@ -56,7 +56,7 @@
         Consulta el Estatus de tu Trámite con la SEDUVI</div>
         <!--Colapsando el navbar -->
         <div class="navbar-collapse collapse navbar-right">
-          <app-menu></app-menu>
+          <app-menu (everySecond)="everySecond()"></app-menu>
 
         </div><!--/.nav-collapse -->
       </div>
@@ -146,6 +146,7 @@
 	  <script src="../assets/js/jquery.prettyPhoto.js"></script>
   	<script src="../assets/js/jquery.isotope.min.js"></script>
   	<script src="../assets/js/custom.js"></script>
+
   </body>
 
 </html>

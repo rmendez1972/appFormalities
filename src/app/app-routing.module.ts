@@ -1,17 +1,20 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-//import { CrisisListComponent } from './crisis-center/crisis-list.component';
-//import { HeroListComponent } from './heroes/hero-list.component';
-//import { HeroDetailComponent }  from './heroes/hero-detail.component';
+import { HomeComponent } from './home/index';
+import { MenuComponent } from './menus/menu.component';
+import { LoginComponent } from './login/index';
+import { RegisterComponent } from './register/index';
+import { AuthGuard } from './_guards/index';
 
 // vector vacio por q las rutas las controlo en cada componente
 const appRoutes: Routes = [
-//{
-    //path: '',
-    //redirectTo: '/heroes',
-    //pathMatch: 'full'
-  //}
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent }
+
+    // otherwise redirect to home
+    //{ path: '**', redirectTo: '' }
 ];
 
 @NgModule({
