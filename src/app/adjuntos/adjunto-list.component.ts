@@ -57,7 +57,7 @@ export class AdjuntoListComponent implements OnInit {
   private tramites: Tramite[];
   private seguimientos: Seguimiento[];
 
-  private adjunto:Adjunto;
+  private adjunto: Adjunto;
   private x: Observable<Adjunto[]>;
   private y: Observable<Solicitud[]>;
   private z: Observable<Tramite[]>;
@@ -95,8 +95,6 @@ export class AdjuntoListComponent implements OnInit {
 
     getAdjuntosruta(){this.adjuntosruta=String(
       this.adjuntoservice.getAdjuntosruta());
-      console.log(this.adjuntosruta);
-       alert(this.adjuntosruta);
   }
 
     getAdjuntos() {

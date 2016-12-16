@@ -59,7 +59,7 @@ export class SeguimientoListComponent implements OnInit {
   private solicitudes: Solicitud[];
   private tramites: Tramite[];
   private seguimientos: Seguimiento[];
-  private solicitante:Solicitante;
+  private solicitante: Solicitante;
   private x: Observable<Solicitante[]>;
   private y: Observable<Solicitud[]>;
   private z: Observable<Tramite[]>;
@@ -172,7 +172,7 @@ export class SeguimientoListComponent implements OnInit {
 
   	onSelect(seguimiento: Seguimiento) {
     	this.router.navigate(['/adjunto', seguimiento.id_seguimiento]);
-	  }
+    }
 
     isSelected(seguimiento: Seguimiento) {/*alert ('dentro hero.id'+hero.id+' selectedId '+this.selectedId);*/ return seguimiento.id_seguimiento === this.selectedId; }
 
