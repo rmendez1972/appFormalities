@@ -19,18 +19,22 @@
 <div class="table-responsive listado">
   <table class="table table-condensed table-hover">
   	<thead>
-  		<th width="75%">Nombre de Archivo Adjunto</th>
-  		<th width="5%"></th>
-  		<th width="20%">Usuario que Adjunta</th>
+  		<th width="50%">Nombre de Archivo Adjunto</th>
+  		<th width="25%"></th>
+  		<th width="25%">Usuario que Adjunta</th>
   	</thead>
   	<tbody *ngFor="let adjunto of adjuntos">
   		<tr>
 
-  			<td width="75%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
-  			<td width="5%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></td>
-  			<td width="20%">{{adjunto.nombreusuario}}</td>
+  			<td width="50%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
+  			<td width="25%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></td>
+  			<td width="25%">{{adjunto.nombreusuario}}</td>
   		</tr>
   	</tbody>
   </table>
 </div>
-<button  class="btn btn-primary btn-lg" (click)="gotoSeguimientos()">Regresar</button>
+<p>
+  <button  class="btn btn-primary btn-lg pull-right" (click)="gotoSeguimientos()">
+    <i class="glyphicon glyphicon-backward"></i>
+  </button>
+</p>

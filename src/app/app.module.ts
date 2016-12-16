@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { SeguimientoRoutingModule } from './seguimientos/seguimientos-routing.module';
+import { BuscarSolicitudRoutingModule } from './buscar-solicitud/buscar-solicitud-routing.module';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menus/menu.component';
 import { SeguimientosModule } from './seguimientos/seguimientos.module';
 import { AdjuntosModule } from './adjuntos/adjuntos.module';
 import { BuscarSolicitudComponent } from './buscar-solicitud/buscar-solicitud.component';
+import { BotonBuscarComponent } from './boton-buscar/boton-buscar.component';
 
 //import { MenuModule } from './menus/menu.module';
 
@@ -18,7 +20,8 @@ import { BuscarSolicitudComponent } from './buscar-solicitud/buscar-solicitud.co
   declarations: [
     AppComponent,
     MenuComponent,
-    BuscarSolicitudComponent
+    BuscarSolicitudComponent,
+    BotonBuscarComponent
   ],
   imports: [
     BrowserModule,
@@ -26,11 +29,12 @@ import { BuscarSolicitudComponent } from './buscar-solicitud/buscar-solicitud.co
     HttpModule,
     AppRoutingModule,
     SeguimientoRoutingModule,
+    BuscarSolicitudRoutingModule,
     SeguimientosModule,
     AdjuntosModule
 
   ],
   providers: [],
-  bootstrap: [AppComponent, MenuComponent, BuscarSolicitudComponent]
+  bootstrap: [AppComponent, MenuComponent, BotonBuscarComponent]
 })
 export class AppModule { }

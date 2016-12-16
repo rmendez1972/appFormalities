@@ -6,7 +6,7 @@ import { SeguimientoDetailComponent }  from './seguimiento-detail.component';
 
 const seguimientosRoutes: Routes = [
   { path: 'seguimientos',  component: SeguimientoListComponent },
-  { path: 'seguimiento/:id', component: SeguimientoDetailComponent }
+  { path: 'seguimientos/:id', component: SeguimientoListComponent }
 ];
 
 @NgModule({

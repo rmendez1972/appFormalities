@@ -1,6 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-serviceUrl.ts
+/crs/app/serviceUrl.ts
 
 # compiled output
 /dist
