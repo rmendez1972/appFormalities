@@ -66,6 +66,7 @@ export class AdjuntoListComponent implements OnInit {
 
 
   private selectedId: number;
+  private selectedIdSol: number;
 
 
 
@@ -104,6 +105,7 @@ export class AdjuntoListComponent implements OnInit {
         {
 
           this.selectedId= +params['id'];
+          this.selectedIdSol= +params['idSol'];
           return this.adjuntoservice.getAdjuntos(this.selectedId)
         })
 
@@ -170,7 +172,8 @@ export class AdjuntoListComponent implements OnInit {
     //let seguimientoId = this.adjuntos ? this.adjuntos.id_seguimiento : null;
     // Pass along the hero id if available
     // so that the HeroList component can select that hero.
-    this.router.navigate(['/seguimientos', { id: this.selectedId }]);
+
+    this.router.navigate(['/seguimientos',this.selectedIdSol]);
   }
 
 

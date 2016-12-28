@@ -107,7 +107,7 @@ a:focus {
 	color: #00b3fe;
 	/*color: white;*/
 	font-weight: 700;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -210,11 +210,9 @@ a:focus {
 
 #headerwrap {
 
-<<<<<<< HEAD
-	background-color: #ffffff;
-=======
+
 	background-color: #E9EBEB;
->>>>>>> 5438eeddec117139240b99ab36c9d93895cd262f
+
 	/*min-height: 550px;*/
 	min-height: 601px;
 	padding-top: 100px;

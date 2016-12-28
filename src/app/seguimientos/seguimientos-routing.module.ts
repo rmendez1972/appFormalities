@@ -6,13 +6,10 @@ import { SeguimientoDetailComponent }  from './seguimiento-detail.component';
 import { AuthGuard } from '../_guards/auth.guard';
 
 const seguimientosRoutes: Routes = [
-<<<<<<< HEAD
+
   { path: 'seguimientos',  component: SeguimientoListComponent, canActivate: [AuthGuard] },
-  { path: 'seguimiento/:id', component: SeguimientoDetailComponent }
-=======
-  { path: 'seguimientos',  component: SeguimientoListComponent },
-  { path: 'seguimientos/:id', component: SeguimientoListComponent }
->>>>>>> 3555f8bdcb5ede96439912e54b26ad7e0b8165de
+  { path: 'seguimientos/:id', component: SeguimientoListComponent, canActivate: [AuthGuard] }
+
 ];
 
 @NgModule({

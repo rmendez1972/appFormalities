@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
     returnUrl: string;
-    logeado: Boolean= false;
+
 
     constructor(
         private route: ActivatedRoute,
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.router.navigate([this.returnUrl]);
-                    this.logeado=true;
+                    this.alertService.success("autenticado exitosamente...");
                 },
                 error => {
                     this.alertService.error(error);

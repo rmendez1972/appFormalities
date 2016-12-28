@@ -66,7 +66,8 @@ export class SeguimientoListComponent implements OnInit {
   private a: Observable<Seguimiento[]>;
 
   private selectedId: number;
-
+  private idSolicitud: number;
+  private idsolicitud:number;
 
 
   	constructor(
@@ -74,16 +75,18 @@ export class SeguimientoListComponent implements OnInit {
       private route: ActivatedRoute,
       private seguimientoservice: SeguimientoService
     )
-    {}
+    {
+      this.idsolicitud= this.route.snapshot.params['id']; //recuperando en el constructor el parametro pasado de idsolicitud
+
+    }
 
 
   	ngOnInit() {
 
-      this.getSolicitantes();
-      alert('solicitantes '+this.solicitantes);
-      this.getSolicitud();
-      this.getTramite();
-      this.getSeguimiento();
+      this.getSolicitantes(this.idsolicitud);
+      this.getSolicitud(this.idsolicitud);
+      this.getTramite(this.idsolicitud);
+      this.getSeguimiento(this.idsolicitud);
     };
 
 
@@ -92,14 +95,14 @@ export class SeguimientoListComponent implements OnInit {
   	title = 'Listado de Seguimientos';
     selectedSolicitante: Solicitante;
 
-    getSolicitantes() {
+    getSolicitantes(idSolicitud: number) {
         this.x=this.route.params
         // (+) converts string 'id' to a number
         .switchMap((params: Params) =>
         {
 
           this.selectedId= +params['id'];
-          return this.seguimientoservice.getSolicitantes()
+          return this.seguimientoservice.getSolicitantes(idSolicitud)
         })
 
         this.x.subscribe(
@@ -110,14 +113,14 @@ export class SeguimientoListComponent implements OnInit {
 
     };
 
-    getSolicitud() {
+    getSolicitud(idSolicitud: number) {
         this.y=this.route.params
         // (+) converts string 'id' to a number
         .switchMap((params: Params) =>
         {
 
           //this.selectedId= +params['id'];
-          return this.seguimientoservice.getSolicitudes()
+          return this.seguimientoservice.getSolicitudes(idSolicitud)
         })
 
         this.y.subscribe(
@@ -126,14 +129,14 @@ export class SeguimientoListComponent implements OnInit {
 
     };
 
-    getTramite() {
+    getTramite(idSolicitud: number) {
         this.z=this.route.params
         // (+) converts string 'id' to a number
         .switchMap((params: Params) =>
         {
 
           //this.selectedId= +params['id'];
-          return this.seguimientoservice.getTramites()
+          return this.seguimientoservice.getTramites(idSolicitud)
         })
 
         this.z.subscribe(
@@ -143,14 +146,14 @@ export class SeguimientoListComponent implements OnInit {
     };
 
 
-    getSeguimiento() {
+    getSeguimiento(idSolicitud: number) {
         this.a=this.route.params
         // (+) converts string 'id' to a number
         .switchMap((params: Params) =>
         {
 
           //this.selectedId= +params['id'];
-          return this.seguimientoservice.getSeguimientos()
+          return this.seguimientoservice.getSeguimientos(idSolicitud)
         })
 
         this.a.subscribe(
@@ -171,7 +174,7 @@ export class SeguimientoListComponent implements OnInit {
     }
 
   	onSelect(seguimiento: Seguimiento) {
-    	this.router.navigate(['/adjunto', seguimiento.id_seguimiento]);
+    	this.router.navigate(['/adjunto', seguimiento.id_seguimiento, this.idsolicitud]);
     }
 
     isSelected(seguimiento: Seguimiento) {/*alert ('dentro hero.id'+hero.id+' selectedId '+this.selectedId);*/ return seguimiento.id_seguimiento === this.selectedId; }

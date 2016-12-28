@@ -22,35 +22,35 @@ export class SeguimientoService {
   constructor (private http: Http, private url:ServiceUrl) {this.seguimientosUrl=String(this.url.getUrl());}
 
 	//getSolicitantes
-  getSolicitantes(): Observable<Solicitante[]> {
-    alert(this.seguimientosUrl);
- 		return this.http.get(this.seguimientosUrl)
+  getSolicitantes(idSolicitud: number): Observable<Solicitante[]> {
+
+ 		return this.http.get(this.seguimientosUrl+idSolicitud)
                     .map(this.extractData)
                     .catch(this.handleError);
 	}
 
   //getSolicitudes
-  getSolicitudes(): Observable<Solicitud[]> {
+  getSolicitudes(idSolicitud: number): Observable<Solicitud[]> {
 
-     return this.http.get(this.seguimientosUrl)
+     return this.http.get(this.seguimientosUrl+idSolicitud)
                     .map(this.extractDataSolic)
                     .catch(this.handleError);
   }
 
 
   //getTramites
-  getTramites(): Observable<Tramite[]> {
+  getTramites(idSolicitud: number): Observable<Tramite[]> {
 
-     return this.http.get(this.seguimientosUrl)
+     return this.http.get(this.seguimientosUrl+idSolicitud)
                     .map(this.extractDataTram)
                     .catch(this.handleError);
   }
 
 
   //getSeguimientos
-  getSeguimientos(): Observable<Seguimiento[]> {
+  getSeguimientos(idSolicitud: number): Observable<Seguimiento[]> {
 
-     return this.http.get(this.seguimientosUrl)
+     return this.http.get(this.seguimientosUrl+idSolicitud)
                     .map(this.extractDataSeg)
                     .catch(this.handleError);
   }
@@ -99,7 +99,7 @@ export class SeguimientoService {
 
 
   private handleError (error: Response | any) {
-    alert('dentro de handlerror ');
+
     // In a real world app, we might use a remote logging infrastructure
     let errMsg: string;
     if (error instanceof Response) {
@@ -114,8 +114,8 @@ export class SeguimientoService {
   }
 
   //getHero
-  getSolicitante(id: number): Observable<Solicitante> {
-    return this.getSolicitantes()
+  getSolicitante(id: number, idSolicitud: number): Observable<Solicitante> {
+    return this.getSolicitantes(idSolicitud)
                .map(solicitantes => solicitantes.find(solicitante => solicitante.id_solicitante === id));
   }
 

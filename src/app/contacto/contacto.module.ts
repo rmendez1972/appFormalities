@@ -1,8 +1,8 @@
 import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
-import { BotonBuscarComponent }  from './boton-buscar.component';
-import { BotonBuscarRoutingModule } from './boton-buscar-routing.module';
+import { ContactoComponent }  from './contacto.component';
+import { ContactoRoutingModule } from './contacto-routing.module';
 
 
 
@@ -10,15 +10,15 @@ import { BotonBuscarRoutingModule } from './boton-buscar-routing.module';
   imports: [
     CommonModule,
     FormsModule,
-    BotonBuscarRoutingModule
+    ContactoRoutingModule
 
   ],
   declarations: [
-    BotonBuscarComponent
+    ContactoComponent
 
   ],
   providers: [
 
   ]
 })
-export class BotonBuscarModule {}
+export class ContactoModule {}

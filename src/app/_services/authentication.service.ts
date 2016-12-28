@@ -1,6 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { MockBackend, MockConnection } from '@angular/http/testing';
 import 'rxjs/add/operator/map'
 
 @Injectable()
@@ -12,6 +13,8 @@ export class AuthenticationService {
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let user = response.json();
+                //let connection: MockConnection;
+                //connection.mockError(new Error('Username or password is incorrect'));
 
                 if (user) {
 

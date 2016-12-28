@@ -55,7 +55,7 @@
         <div style="font-family:Conv_roundedelegance;font-size:1.25em;display: inline-block; vertical-align: middle;padding-top:15px;">
         Consulta el Estatus de tu Trámite con la SEDUVI</div>
         <!--Colapsando el navbar -->
-        <div class="navbar-collapse collapse navbar-right">
+        <div class="navbar-collapse collapse navbar-right" style="margin: 0px; padding: 0px; font-size: 25px">
           <app-menu (everySecond)="everySecond()"></app-menu>
 
         </div><!--/.nav-collapse -->
@@ -70,11 +70,13 @@
 	 ***************************************************************************************************************** -->
 	<div id="headerwrap">
 	    <div class="container">
-        <div class="row"><app-boton-buscar></app-boton-buscar></div>
+        <div class="row">
+          <!-- <app-boton-buscar></app-boton-buscar> -->
+        </div>
 	    	<section class="show">
           <div class="row">
             <div class="col-lg-10  col-md-10 col-md-12 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-0 col-xs-offset-0">
-  						<app-root>Loading...</app-root>
+  						<app-root>Cargando Datos...</app-root>
             </div>
   				</div><!-- /row -->
 			  </section>
