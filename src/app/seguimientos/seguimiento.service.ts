@@ -21,36 +21,36 @@ export class SeguimientoService {
 
   constructor (private http: Http, private url:ServiceUrl) {this.seguimientosUrl=String(this.url.getUrl());}
 
-	//getHeroes
-  getSolicitantes(): Observable<Solicitante[]> {
-    //alert('dentro de getheroes');
- 		return this.http.get(this.seguimientosUrl)
+	//getSolicitantes
+  getSolicitantes(idSolicitud: number): Observable<Solicitante[]> {
+
+ 		return this.http.get(this.seguimientosUrl+idSolicitud)
                     .map(this.extractData)
                     .catch(this.handleError);
 	}
 
   //getSolicitudes
-  getSolicitudes(): Observable<Solicitud[]> {
-    //alert('dentro de getsolicitudes');
-     return this.http.get(this.seguimientosUrl)
+  getSolicitudes(idSolicitud: number): Observable<Solicitud[]> {
+
+     return this.http.get(this.seguimientosUrl+idSolicitud)
                     .map(this.extractDataSolic)
                     .catch(this.handleError);
   }
 
 
-  //getSolicitudes
-  getTramites(): Observable<Tramite[]> {
-    //alert('dentro de getsolicitudes');
-     return this.http.get(this.seguimientosUrl)
+  //getTramites
+  getTramites(idSolicitud: number): Observable<Tramite[]> {
+
+     return this.http.get(this.seguimientosUrl+idSolicitud)
                     .map(this.extractDataTram)
                     .catch(this.handleError);
   }
 
 
-  //getSolicitudes
-  getSeguimientos(): Observable<Seguimiento[]> {
-    //alert('dentro de getsolicitudes');
-     return this.http.get(this.seguimientosUrl)
+  //getSeguimientos
+  getSeguimientos(idSolicitud: number): Observable<Seguimiento[]> {
+
+     return this.http.get(this.seguimientosUrl+idSolicitud)
                     .map(this.extractDataSeg)
                     .catch(this.handleError);
   }
@@ -64,8 +64,9 @@ export class SeguimientoService {
   }
 
   private extractData(res: Response) {
-    //alert('res '+res);
+
     let body = res.json();
+
 
     return body.data || { };
   }
@@ -113,8 +114,8 @@ export class SeguimientoService {
   }
 
   //getHero
-  getSolicitante(id: number): Observable<Solicitante> {
-    return this.getSolicitantes()
+  getSolicitante(id: number, idSolicitud: number): Observable<Solicitante> {
+    return this.getSolicitantes(idSolicitud)
                .map(solicitantes => solicitantes.find(solicitante => solicitante.id_solicitante === id));
   }
 

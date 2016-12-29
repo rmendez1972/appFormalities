@@ -55,7 +55,7 @@ export class SeguimientoDetailComponent implements OnInit {
   ngOnInit() {
   	this.route.params
     // (+) converts string 'id' to a number
-    .switchMap((params: Params) => this.service.getSolicitante(+params['id']))
+    .switchMap((params: Params) => this.service.getSolicitante(+params['id'],+params['id']))
     .subscribe((solicitante: Solicitante) => this.solicitante = solicitante);
   }
 
