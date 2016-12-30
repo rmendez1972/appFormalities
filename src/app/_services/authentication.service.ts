@@ -9,7 +9,7 @@ export class AuthenticationService {
     constructor(private http: Http) { }
 
     login(username: string, password: string) {
-        return this.http.post('http://localhost:8080/Tramites/controladorregistro?operacion=apilogin', JSON.stringify({ username: username, password: password }))
+        return this.http.post('http://localhost:8083/tramites/controladorregistro?operacion=apilogin', JSON.stringify({ username: username, password: password }))
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let user = response.json();
