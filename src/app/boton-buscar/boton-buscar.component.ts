@@ -21,7 +21,7 @@ export class BotonBuscarComponent implements OnInit {
   }
 
     enviaSolicitud(idSolicitud:number) {
-
+      //recuperar del currentUser solo el id
 
      if (idSolicitud>0) {
        this.router.navigate(['/seguimientos',idSolicitud])

@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { User } from '../_models/index';
 import { AlertService, AuthenticationService } from '../_services/index';
 
 @Component({
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
     returnUrl: string;
-
+    currentUser: User;
 
     constructor(
         private route: ActivatedRoute,
@@ -35,7 +35,22 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.router.navigate([this.returnUrl]);
-                    this.alertService.success("autenticado exitosamente...");
+                    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+                    if (JSON.stringify(this.currentUser).length > 2) {
+                        this.alertService.success("autenticado exitosamente...");
+                    }else{
+
+                        this.alertService.error("email y/o password erroneos, intneta de nuevo...");
+                        this.loading = false;
+                        this.authenticationService.logout();
+
+                        this.router.navigate(['/']);
+                    }
+
+
+
+
                 },
                 error => {
                     this.alertService.error(error);
