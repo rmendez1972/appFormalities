@@ -7,6 +7,7 @@ import { Http, Response, Headers,RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 //import {Observable} from 'rxjs/Rx';
 import { ServiceUrl } from '../serviceUrl';
+import { AlertService} from '../_services/index'; 
 
 
 
@@ -18,8 +19,10 @@ export class SeguimientoService {
   private seguimientosUrl: string;
 
 
-
-  constructor (private http: Http, private url:ServiceUrl) {this.seguimientosUrl=String(this.url.getUrl());}
+  constructor (private http: Http, 
+      private url:ServiceUrl,
+      private alertService: AlertService) 
+      {this.seguimientosUrl=String(this.url.getUrl());}
 
 	//getSolicitantes
   getSolicitantes(idSolicitud: number): Observable<Solicitante[]> {
@@ -66,25 +69,31 @@ export class SeguimientoService {
   private extractData(res: Response) {
 
     let body = res.json();
-
-
+        if(body.data.length > 0){
+      //this.alertService.success("Núm. Solicitud encontrada exitosamente!"); 
+      //alert("Este areglo NO esta vacio");
+    }else {
+      //this.alertService.error("Núm. Solicitud NO encontrada!");
+      //alert("este arreglo está vacio");
+    }
     return body.data || { };
+    
   }
 
 
   private extractDataSolic(res: Response) {
     //alert('res en datasolic '+res);
     let body = res.json();
-    //alert('body '+body);
-
+   
     return body.solicitud || { };
+    
   }
 
 
   private extractDataTram(res: Response) {
     //alert('res en datasolic '+res);
     let body = res.json();
-    //alert('body '+body);
+   
 
     return body.tramite || { };
   }
@@ -92,7 +101,7 @@ export class SeguimientoService {
   private extractDataSeg(res: Response) {
     //alert('res en datasolic '+res);
     let body = res.json();
-    //alert('body '+body);
+    
 
     return body.seguimientos || { };
   }
@@ -109,7 +118,7 @@ export class SeguimientoService {
     } else {
       errMsg = error.message ? error.message : error.toString();
     }
-    console.error(errMsg);
+    console.error('Error...'+errMsg);
     return Observable.throw(errMsg);
   }
 

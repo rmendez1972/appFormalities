@@ -120,12 +120,14 @@ export class SeguimientoListComponent implements OnInit {
         {
 
           //this.selectedId= +params['id'];
-          return this.seguimientoservice.getSolicitudes(idSolicitud)
+          return this.seguimientoservice.getSolicitudes(idSolicitud);
         })
-
+ 
         this.y.subscribe(
                        solicitud => this.solicitudes = solicitud,
                        error =>  this.errorMessage = <any>error);
+                      
+                      
 
     };
 

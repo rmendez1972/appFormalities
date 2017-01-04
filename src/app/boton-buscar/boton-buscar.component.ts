@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Seguimiento } from '../seguimientos/seguimiento';
 import { SeguimientoRoutingModule} from '../seguimientos/seguimientos-routing.module'
+import { AlertService} from '../_services/index'; 
 
 @Component({
   selector:    'app-boton-buscar',
@@ -11,7 +12,8 @@ import { SeguimientoRoutingModule} from '../seguimientos/seguimientos-routing.mo
 export class BotonBuscarComponent implements OnInit {
 
   constructor(
-     private router: Router
+     private router: Router,
+     private alertService: AlertService
 
   ) { }
 
@@ -22,9 +24,9 @@ export class BotonBuscarComponent implements OnInit {
 
 
      if (idSolicitud>0) {
-       this.router.navigate(['/seguimientos',idSolicitud]);
+       this.router.navigate(['/seguimientos',idSolicitud])
       } else {
-      alert('Solicitud no válida');;
+        this.alertService.error("Núm. Solicitud NO válida...")
       }
 
 	  }
