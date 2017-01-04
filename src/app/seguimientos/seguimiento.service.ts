@@ -7,7 +7,7 @@ import { Http, Response, Headers,RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 //import {Observable} from 'rxjs/Rx';
 import { ServiceUrl } from '../serviceUrl';
-import { AlertService} from '../_services/index'; 
+import { AlertService} from '../_services/index';
 
 
 
@@ -26,10 +26,11 @@ export class SeguimientoService {
 
 	//getSolicitantes
   getSolicitantes(idSolicitud: number): Observable<Solicitante[]> {
-
+    
  		return this.http.get(this.seguimientosUrl+idSolicitud)
                     .map(this.extractData)
                     .catch(this.handleError);
+                                       
 	}
 
   //getSolicitudes
@@ -70,12 +71,13 @@ export class SeguimientoService {
 
     let body = res.json();
         if(body.data.length > 0){
-      //this.alertService.success("Núm. Solicitud encontrada exitosamente!"); 
-      //alert("Este areglo NO esta vacio");
-    }else {
-      //this.alertService.error("Núm. Solicitud NO encontrada!");
-      //alert("este arreglo está vacio");
-    }
+          //this.alertService.success("Núm. Solicitud encontrada exitosamente!") 
+          alert("Este areglo NO esta vacio")
+        }/*else {
+          this.alertService.error("Núm. Solicitud NO encontrada!");
+          alert("este arreglo está vacio");
+        }*/
+
     return body.data || { };
     
   }
@@ -83,6 +85,7 @@ export class SeguimientoService {
 
   private extractDataSolic(res: Response) {
     //alert('res en datasolic '+res);
+
     let body = res.json();
    
     return body.solicitud || { };
@@ -118,8 +121,9 @@ export class SeguimientoService {
     } else {
       errMsg = error.message ? error.message : error.toString();
     }
-    console.error('Error...'+errMsg);
+    console.error(errMsg);
     return Observable.throw(errMsg);
+
   }
 
   //getHero
@@ -127,5 +131,19 @@ export class SeguimientoService {
     return this.getSolicitantes(idSolicitud)
                .map(solicitantes => solicitantes.find(solicitante => solicitante.id_solicitante === id));
   }
+
+  /*login() {
+        this.loading = true;
+        this.authenticationService.login(this.model.username, this.model.password)
+            .subscribe(
+                data => {
+                    //this.router.navigate([this.returnUrl]);
+                    this.alertService.success("autenticado exitosamente...");
+                },
+                error => {
+                    this.alertService.error(error);
+                    //this.loading = false;
+                });
+    }*/
 
 }
