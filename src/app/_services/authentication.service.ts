@@ -24,18 +24,25 @@ export class AuthenticationService {
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let user = response.json();
+
                 //let connection: MockConnection;
                 //connection.mockError(new Error('Username or password is incorrect'));
+                //alert('user.user '+JSON.stringify(user.user).length);
+                //if (JSON.stringify(user.user).length > 2) {
 
-                if (user) {
 
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user.user));
-                }
+                //}else{
+                //    alert('dentro de else');
+                //    this.logout();
+                //}
+
             });
     }
 
     logout() {
+
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     }
