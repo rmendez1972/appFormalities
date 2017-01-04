@@ -6,6 +6,7 @@ public URL: String;
 public URLadjuntos: String;
 public URLadjuntosdescarga: String;
 public URLbuscarsolicitud: String;
+public URLlogin: String;
 
 constructor() {}
 
@@ -22,6 +23,9 @@ constructor() {}
 	  			return this.URLadjuntosdescarga='http://localhost:8080/Tramites/adjuntos/';
 	  	}
 
+	  	getUrllogin():String{
+	  			return this.URLlogin='http://localhost:8080/Tramites/controladorregistro?operacion=apilogin&username=';
+	  	}
 
 
 }
