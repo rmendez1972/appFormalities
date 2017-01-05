@@ -4,14 +4,14 @@ export class Seguimiento {
 	public observaciones: String;
 	public estatus: String;
 	public adjunto: boolean;
-
+	
 	constructor(
   		public mid_seguimiento: number,
 		public mfecha: String,
 		public mobservaciones: String,
 		public mestatus: String,
-		public madjunto: boolean
-
+		public madjunto: boolean,
+		
 
   		)
   		{
@@ -21,7 +21,7 @@ export class Seguimiento {
 			this.observaciones=mobservaciones;
 			this.estatus=mestatus;
 			this.adjunto=madjunto;
-
+		
 
 		}
 }

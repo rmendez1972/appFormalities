@@ -25,38 +25,38 @@ export class SeguimientoService {
       {this.seguimientosUrl=String(this.url.getUrl());}
 
 	//getSolicitantes
-  getSolicitantes(idSolicitud: number): Observable<Solicitante[]> {
+  getSolicitantes(idSolicitud: number,idSolicitante:number): Observable<Solicitante[]> {
     
- 		return this.http.get(this.seguimientosUrl+idSolicitud)
+ 		return this.http.get(this.seguimientosUrl+idSolicitud+"&id_solicitante="+idSolicitante)
                     .map(this.extractData)
                     .catch(this.handleError);
                                        
 	}
 
   //getSolicitudes
-  getSolicitudes(idSolicitud: number): Observable<Solicitud[]> {
+  getSolicitudes(idSolicitud: number,idSolicitante:number): Observable<Solicitud[]> {
 
-     return this.http.get(this.seguimientosUrl+idSolicitud)
+     return this.http.get(this.seguimientosUrl+idSolicitud+"&id_solicitante="+idSolicitante)
                     .map(this.extractDataSolic)
                     .catch(this.handleError);
   }
 
 
   //getTramites
-  getTramites(idSolicitud: number): Observable<Tramite[]> {
+  getTramites(idSolicitud: number,idSolicitante:number): Observable<Tramite[]> {
 
-     return this.http.get(this.seguimientosUrl+idSolicitud)
+     return this.http.get(this.seguimientosUrl+idSolicitud+"&id_solicitante="+idSolicitante)
                     .map(this.extractDataTram)
                     .catch(this.handleError);
   }
 
 
   //getSeguimientos
-  getSeguimientos(idSolicitud: number): Observable<Seguimiento[]> {
+  getSeguimientos(idSolicitud: number,idSolicitante:number): Observable<Seguimiento[]> {
 
-     return this.http.get(this.seguimientosUrl+idSolicitud)
+     return this.http.get(this.seguimientosUrl+idSolicitud+"&id_solicitante="+idSolicitante)
                     .map(this.extractDataSeg)
-                    .catch(this.handleError);
+                    .catch(this.handleErrorSeguimientos);
   }
 
   addSolicitante (name: string): Observable<Solicitante> {
@@ -70,14 +70,7 @@ export class SeguimientoService {
   private extractData(res: Response) {
 
     let body = res.json();
-        if(body.data.length > 0){
-          //this.alertService.success("Núm. Solicitud encontrada exitosamente!") 
-          alert("Este areglo NO esta vacio")
-        }/*else {
-          this.alertService.error("Núm. Solicitud NO encontrada!");
-          alert("este arreglo está vacio");
-        }*/
-
+       
     return body.data || { };
     
   }
@@ -126,24 +119,27 @@ export class SeguimientoService {
 
   }
 
+
+private handleErrorSeguimientos (error: Response | any) {
+    // In a real world app, we might use a remote logging infrastructure
+    let errMsg: string;
+    if (error instanceof Response) {
+      const body = error.json() || '';
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+    console.error(errMsg);
+    return Observable.throw(errMsg);
+
+  }
+
   //getHero
   getSolicitante(id: number, idSolicitud: number): Observable<Solicitante> {
-    return this.getSolicitantes(idSolicitud)
+    return this.getSolicitantes(idSolicitud,id)
                .map(solicitantes => solicitantes.find(solicitante => solicitante.id_solicitante === id));
   }
 
-  /*login() {
-        this.loading = true;
-        this.authenticationService.login(this.model.username, this.model.password)
-            .subscribe(
-                data => {
-                    //this.router.navigate([this.returnUrl]);
-                    this.alertService.success("autenticado exitosamente...");
-                },
-                error => {
-                    this.alertService.error(error);
-                    //this.loading = false;
-                });
-    }*/
-
+  
 }

@@ -9,6 +9,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
+import { AlertService} from '../_services/index';
 
 
 @Component({
@@ -68,25 +69,27 @@ export class SeguimientoListComponent implements OnInit {
   private selectedId: number;
   private idSolicitud: number;
   private idsolicitud:number;
+  private idsolicitante:number;
 
 
   	constructor(
       private router: Router,
       private route: ActivatedRoute,
-      private seguimientoservice: SeguimientoService
+      private seguimientoservice: SeguimientoService,
+      private alertService:AlertService
     )
     {
       this.idsolicitud= this.route.snapshot.params['id']; //recuperando en el constructor el parametro pasado de idsolicitud
-
+      this.idsolicitante= this.route.snapshot.params['idSol'];
     }
 
 
   	ngOnInit() {
 
-      this.getSolicitantes(this.idsolicitud);
-      this.getSolicitud(this.idsolicitud);
-      this.getTramite(this.idsolicitud);
-      this.getSeguimiento(this.idsolicitud);
+      this.getSolicitantes(this.idsolicitud,this.idsolicitante);
+      this.getSolicitud(this.idsolicitud,this.idsolicitante);
+      this.getTramite(this.idsolicitud,this.idsolicitante);
+      this.getSeguimiento(this.idsolicitud,this.idsolicitante);
     };
 
 
@@ -95,14 +98,14 @@ export class SeguimientoListComponent implements OnInit {
   	title = 'Listado de Seguimientos';
     selectedSolicitante: Solicitante;
 
-    getSolicitantes(idSolicitud: number) {
+    getSolicitantes(idSolicitud: number,idSolicitante:number) {
         this.x=this.route.params
         // (+) converts string 'id' to a number
         .switchMap((params: Params) =>
         {
 
           this.selectedId= +params['id'];
-          return this.seguimientoservice.getSolicitantes(idSolicitud)
+          return this.seguimientoservice.getSolicitantes(idSolicitud,idSolicitante)
         })
 
         this.x.subscribe(
@@ -113,14 +116,14 @@ export class SeguimientoListComponent implements OnInit {
 
     };
 
-    getSolicitud(idSolicitud: number) {
+    getSolicitud(idSolicitud: number,idSolicitante:number) {
         this.y=this.route.params
         // (+) converts string 'id' to a number
         .switchMap((params: Params) =>
         {
 
           //this.selectedId= +params['id'];
-          return this.seguimientoservice.getSolicitudes(idSolicitud);
+          return this.seguimientoservice.getSolicitudes(idSolicitud,idSolicitante);
         })
  
         this.y.subscribe(
@@ -131,14 +134,14 @@ export class SeguimientoListComponent implements OnInit {
 
     };
 
-    getTramite(idSolicitud: number) {
+    getTramite(idSolicitud: number,idSolicitante:number) {
         this.z=this.route.params
         // (+) converts string 'id' to a number
         .switchMap((params: Params) =>
         {
 
           //this.selectedId= +params['id'];
-          return this.seguimientoservice.getTramites(idSolicitud)
+          return this.seguimientoservice.getTramites(idSolicitud,idSolicitante)
         })
 
         this.z.subscribe(
@@ -148,19 +151,23 @@ export class SeguimientoListComponent implements OnInit {
     };
 
 
-    getSeguimiento(idSolicitud: number) {
+    getSeguimiento(idSolicitud: number,idSolicitante:number) {
         this.a=this.route.params
         // (+) converts string 'id' to a number
         .switchMap((params: Params) =>
         {
 
           //this.selectedId= +params['id'];
-          return this.seguimientoservice.getSeguimientos(idSolicitud)
+          return this.seguimientoservice.getSeguimientos(idSolicitud,idSolicitante)
         })
 
         this.a.subscribe(
-                       seguimiento => this.seguimientos = seguimiento,
-                       error =>  this.errorMessage = <any>error);
+                       seguimiento => {this.seguimientos = seguimiento;
+                        this.alertService.success("Núm. de solicitud recuperada exitosamente!"); 
+                       },
+                       error => { this.errorMessage = <any>error;
+                       this.alertService.error("Este núm. solicitud NO le pertenece, lo sentimos intente con otro núm. de solicitud!");
+                      });
 
     };
 
