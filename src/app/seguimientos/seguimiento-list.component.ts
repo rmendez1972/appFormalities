@@ -125,12 +125,12 @@ export class SeguimientoListComponent implements OnInit {
           //this.selectedId= +params['id'];
           return this.seguimientoservice.getSolicitudes(idSolicitud,idSolicitante);
         })
- 
+
         this.y.subscribe(
                        solicitud => this.solicitudes = solicitud,
                        error =>  this.errorMessage = <any>error);
-                      
-                      
+
+
 
     };
 
@@ -162,12 +162,24 @@ export class SeguimientoListComponent implements OnInit {
         })
 
         this.a.subscribe(
-                       seguimiento => {this.seguimientos = seguimiento;
-                        this.alertService.success("Núm. de solicitud recuperada exitosamente!"); 
+                       seguimiento => {
+
+                        this.seguimientos = seguimiento;
+
+                        if (this.seguimientos.length > 0){
+
+                          this.alertService.success("Núm. de solicitud recuperada exitosamente!");
+                        }else{
+
+                         this.alertService.error("Este núm. solicitud NO le pertenece, lo sentimos intente con otro núm. de solicitud!");
+                        }
                        },
-                       error => { this.errorMessage = <any>error;
-                       this.alertService.error("Este núm. solicitud NO le pertenece, lo sentimos intente con otro núm. de solicitud!");
-                      });
+
+                       error => {
+                         this.errorMessage = <any>error;
+                         this.alertService.error("Este núm. solicitud NO existe, lo sentimos intente con otro núm. de solicitud!");
+                       }
+                      );
 
     };
 
