@@ -1,6 +1,6 @@
 <div *ngIf="currentUser">
 <div>
-<ul  class="nav navbar-nav pull-right">
+<ul  class="nav navbar-nav">
 
 	<li class="active" ><a routerLink="/boton-buscar" routerLinkActive="active">Inicio</a></li>
   <!-- <li><a routerLink="/seguimientos" routerLinkActive="active">Seguimientos</a></li> -->
@@ -17,9 +17,6 @@
 </ul>
 
 </div>
-
-
-
 <div *ngFor="let usuario of currentUser" style="margin-right: 0px; margin-top: 0px; display: inline-block; font-size: 12px;font-weight: normal;" class="label label-info">
   <i class="glyphicon glyphicon-user" style="font-size: 16px; margin-right: 5px;"></i>
   Hola <strong>{{usuario.firstname}}</strong>, bienvenido a la app!
