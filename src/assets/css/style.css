@@ -522,3 +522,13 @@ csmall2 {
 	border-radius: 8px;
 	padding:5px;
 }
+
+/*Clase para el div de los datos generales de la solicidtud*/
+.encabezado{
+	margin-top:60px;
+	font-family:Conv_roundedelegance;
+	line-height: normal;
+	vertical-align: center;
+	border-radius: 6px;
+	padding-top:1%;
+}
