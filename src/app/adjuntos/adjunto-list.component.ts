@@ -8,7 +8,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
-import { User } from '../_models/index'; 
+import { User } from '../_models/index';
 
 
 @Component({
@@ -79,11 +79,11 @@ export class AdjuntoListComponent implements OnInit {
       private adjuntoservice: AdjuntoService
     )
     {this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    
+
       let x=0;
       for (x=0;x<this.currentUser.length;x++){
         this.idSolicitante=this.currentUser[x].id;
-        
+
       }}
 
 
