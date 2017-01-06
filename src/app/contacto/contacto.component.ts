@@ -51,6 +51,6 @@ export class ContactoComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  title = 'Contacto';
 
 }

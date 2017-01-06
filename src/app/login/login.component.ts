@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
                     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
                     if (JSON.stringify(this.currentUser).length > 2) {
-                        this.alertService.success("autenticado exitosamente...");
+                        this.alertService.success("Autenticado exitosamente...");
                     }else{
 
                         this.alertService.error("email y/o password erroneos, intneta de nuevo...");
