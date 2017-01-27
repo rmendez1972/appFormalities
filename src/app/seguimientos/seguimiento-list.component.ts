@@ -95,7 +95,7 @@ export class SeguimientoListComponent implements OnInit {
 
 
 
-  	title = 'Listado de Seguimientos';
+  	title = 'Listado de Seguimientos del Trámite';
     selectedSolicitante: Solicitante;
 
     getSolicitantes(idSolicitud: number,idSolicitante:number) {
