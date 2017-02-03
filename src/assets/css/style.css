@@ -215,7 +215,7 @@ a:focus {
 
 	/*min-height: 550px;*/
 	min-height: 601px;
-	padding-top: 100px;
+	/*padding-top: 100px;*/
 	padding-bottom: 0px;
 	text-align: center;
 }
@@ -480,7 +480,7 @@ csmall2 {
   background-repeat: no-repeat;
   background-position: bottom left;
   margin-left: -15px;
-  margin-top: 30px;
+  /*margin-top: 30px;*/
 
 }
 
@@ -526,7 +526,7 @@ csmall2 {
 
 /*Clase para el div de los datos generales de la solicidtud*/
 .encabezado{
-	margin-top:60px;
+	margin-top:30px;
 	font-family:Conv_roundedelegance;
 	line-height: normal;
 	vertical-align: center;
