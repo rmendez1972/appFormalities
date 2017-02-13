@@ -19,18 +19,18 @@ export class SeguimientoService {
   private seguimientosUrl: string;
 
 
-  constructor (private http: Http, 
+  constructor (private http: Http,
       private url:ServiceUrl,
-      private alertService: AlertService) 
+      private alertService: AlertService)
       {this.seguimientosUrl=String(this.url.getUrl());}
 
 	//getSolicitantes
   getSolicitantes(idSolicitud: number,idSolicitante:number): Observable<Solicitante[]> {
-    
+
  		return this.http.get(this.seguimientosUrl+idSolicitud+"&id_solicitante="+idSolicitante)
                     .map(this.extractData)
                     .catch(this.handleError);
-                                       
+
 	}
 
   //getSolicitudes
@@ -70,9 +70,9 @@ export class SeguimientoService {
   private extractData(res: Response) {
 
     let body = res.json();
-       
+
     return body.data || { };
-    
+
   }
 
 
@@ -80,16 +80,17 @@ export class SeguimientoService {
     //alert('res en datasolic '+res);
 
     let body = res.json();
-   
+
     return body.solicitud || { };
-    
+
   }
 
 
   private extractDataTram(res: Response) {
-    //alert('res en datasolic '+res);
-    let body = res.json();
-   
+    //alert(JSON.stringify(res));
+
+   let body = res.json();
+   console.log(body.tramite);
 
     return body.tramite || { };
   }
@@ -97,7 +98,7 @@ export class SeguimientoService {
   private extractDataSeg(res: Response) {
     //alert('res en datasolic '+res);
     let body = res.json();
-    
+
 
     return body.seguimientos || { };
   }
@@ -141,5 +142,5 @@ private handleErrorSeguimientos (error: Response | any) {
                .map(solicitantes => solicitantes.find(solicitante => solicitante.id_solicitante === id));
   }
 
-  
+
 }
