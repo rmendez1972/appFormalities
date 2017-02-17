@@ -27,6 +27,8 @@ import { BotonBuscarComponent } from './boton-buscar/boton-buscar.component';
 
 import { ContactoModule } from './contacto/contacto.module';
 import { BotonBuscarModule } from './boton-buscar/boton-buscar.module';
+import { CambiaPasswordComponent } from './cambia-password/cambia-password.component';
+import { CambiaPasswordModule } from './cambia-password/cambia-password.module';
 //import { BuscarSolicitudComponent } from './buscar-solicitud/buscar-solicitud.component';
 
 
@@ -40,6 +42,7 @@ import { BotonBuscarModule } from './boton-buscar/boton-buscar.module';
     LoginComponent,
     RegisterComponent,
     MenuComponent
+   // CambiaPasswordComponent
     //BotonBuscarComponent
 
   ],
@@ -52,7 +55,8 @@ import { BotonBuscarModule } from './boton-buscar/boton-buscar.module';
     SeguimientosModule,
     AdjuntosModule,
     BotonBuscarModule,
-    ContactoModule
+    ContactoModule,
+    CambiaPasswordModule
   ],
   providers: [
     AuthGuard,

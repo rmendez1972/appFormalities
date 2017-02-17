@@ -7,6 +7,7 @@ public URLadjuntos: String;
 public URLadjuntosdescarga: String;
 public URLbuscarsolicitud: String;
 public URLlogin: String;
+public URLcambiapassword: String;
 
 constructor() {}
 
@@ -26,6 +27,11 @@ constructor() {}
 	  	getUrllogin():String{
 	  			return this.URLlogin='http://localhost:8083/tramites/controladorregistro?operacion=apilogin&username=';
 	  	}
+		
+		getUrlCambiaPassword():String{
+	  			return this.URLcambiapassword='http://localhost:8083/tramites/controladorregistro?operacion=apiSolicitanteCambioPassword&id_solicitante=';
+	  	}
+		  
 
 
 }
