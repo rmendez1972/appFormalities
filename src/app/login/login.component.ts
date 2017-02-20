@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
                         this.alertService.success("Autenticado exitosamente...");
                     }else{
 
-                        this.alertService.error("email y/o password erroneos, intneta de nuevo...");
+                        this.alertService.error("email y/o password erroneos, intenta de nuevo...");
                         this.loading = false;
                         this.authenticationService.logout();
 
@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
                 error => {
                     this.alertService.error(error);
                     this.loading = false;
+                    this.router.navigate(['/']);
                 });
     }
 }
