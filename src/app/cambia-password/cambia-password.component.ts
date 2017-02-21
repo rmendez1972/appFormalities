@@ -87,7 +87,7 @@ export class CambiaPasswordComponent implements OnInit {
     //CambiaPassword(id_solicitante:string, password:string, new_password:string) {
     CambiaPassword() {
      
-     alert(this.model.password+" "+this.model.new_password);
+     //alert(this.model.password+" "+this.model.new_password);
         this.loading = true;
         this.x=this.route.params
         .switchMap ((params: Params)=>
