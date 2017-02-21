@@ -87,17 +87,10 @@ export class SeguimientoService {
 
 
   private extractDataTram(res: Response) {
-<<<<<<< HEAD
-    //alert('res en datasolic '+res);
-    let body = res.json();
-    
-   
-=======
     //alert(JSON.stringify(res));
 
    let body = res.json();
    console.log(body.tramite);
->>>>>>> b1f31af1be5b003148cf1030baf863b7f1b3bb23
 
     return body.tramite || { };
   }

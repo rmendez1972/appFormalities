@@ -24,6 +24,7 @@ export class AlertService {
     }
 
     success(message: string, keepAfterNavigationChange = true) {
+        alert(message+' '+keepAfterNavigationChange+' dentro del service');
         this.keepAfterNavigationChange = keepAfterNavigationChange;
         this.subject.next({ type: 'success', text: message, fade: 'true', in:'true' });
     }

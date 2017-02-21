@@ -14,7 +14,10 @@ export class AlertComponent {
     constructor(private alertService: AlertService) { }
 
     ngOnInit() {
-        this.alertService.getMessage().subscribe(message => { this.message = message; });
+        this.alertService.getMessage().subscribe(message => {
+        	alert('el mensaje dentro del typscript del alertcomponent '+message.text);
+        	this.message = message;
+        });
     }
 
 

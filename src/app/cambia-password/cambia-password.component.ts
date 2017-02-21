@@ -73,37 +73,39 @@ export class CambiaPasswordComponent implements OnInit {
         this.returnUrl = this.route.snapshot.params['returnUrl'] || '/';
         //alert(this.returnUrl);
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        
+
         for (var elemento in this.currentUser) {
           //this.id=elemento["id"];
           //alert(this.currentUser[elemento].id);
           this.id=this.currentUser[elemento].id
         }
-        
+
     }
 
-    
+
 
     //CambiaPassword(id_solicitante:string, password:string, new_password:string) {
     CambiaPassword() {
-     
-     alert(this.model.password+" "+this.model.new_password);
+
+
         this.loading = true;
+
         this.x=this.route.params
         .switchMap ((params: Params)=>
         {
-          return this.cambiapasswordservice.cambioPassword(this.id, this.model.new_password) 
+          return this.cambiapasswordservice.cambioPassword(this.id, this.model.new_password)
         })
-        
+
         this.x.subscribe(
           data => {
+            this.router.navigate(['/']);
             this.respuestas = data;
             this.alertService.success("Nuevo password cambiado exitosamente...");
           },
           error =>  {
             this.errorMessage = <any>error
             this.alertService.error("Ups! Algo pasó, no se pudo cambiar tú password, inténtalo de nuevo");
-          } 
+          }
         );
     };
 }
