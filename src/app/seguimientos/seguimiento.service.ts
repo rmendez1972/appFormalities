@@ -87,12 +87,18 @@ export class SeguimientoService {
 
 
   private extractDataTram(res: Response) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 75a0ae4a8bee9d21430df6189e9d155f36d24fb2
     //alert(JSON.stringify(res));
 
    let body = res.json();
    console.log(body.tramite);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 75a0ae4a8bee9d21430df6189e9d155f36d24fb2
 
     return body.tramite || { };
   }
