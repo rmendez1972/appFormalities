@@ -98,7 +98,7 @@ export class CambiaPasswordComponent implements OnInit {
 
         this.x.subscribe(
           data => {
-            this.router.navigate(['/']);
+            this.router.navigate(['/boton-buscar']);
             this.respuestas = data;
             this.alertService.success("Nuevo password cambiado exitosamente...");
           },
