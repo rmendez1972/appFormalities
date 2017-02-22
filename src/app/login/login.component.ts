@@ -40,12 +40,14 @@ export class LoginComponent implements OnInit {
                     if (JSON.stringify(this.currentUser).length > 2) {
                         this.alertService.success("Autenticado exitosamente...");
                     }else{
+                        this.router.navigate(['/login']);
 
-                        this.alertService.error("email y/o password erroneos, intenta de nuevo...");
+                        this.alertService.error("email y/o password erroneos, intenta de nuevo...",true);
                         this.loading = false;
+
                         this.authenticationService.logout();
 
-                        this.router.navigate(['/']);
+                        
                     }
 
 

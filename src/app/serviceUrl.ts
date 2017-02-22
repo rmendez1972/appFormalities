@@ -29,7 +29,7 @@ constructor() {}
 	  	}
 
 		getUrlCambiaPassword():String{
-	  			return this.URLcambiapassword='http://localhost:8080/Tramites/controladorregistro?operacion=apiSolicitanteCambioPassword&id_solicitante=';
+	  			return this.URLcambiapassword='http://localhost:8083/tramites/controladorregistro?operacion=apiSolicitanteCambioPassword&id_solicitante=';
 	  	}
 
 

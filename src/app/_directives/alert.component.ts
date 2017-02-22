@@ -15,7 +15,7 @@ export class AlertComponent {
 
     ngOnInit() {
         this.alertService.getMessage().subscribe(message => {
-        	alert('el mensaje dentro del typscript del alertcomponent '+message.text);
+        	//alert('el mensaje dentro del typscript del alertcomponent ');
         	this.message = message;
         });
     }
