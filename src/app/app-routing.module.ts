@@ -10,8 +10,7 @@ import { AuthGuard } from './_guards/index';
 
 // vector vacio por q las rutas las controlo en cada componente
 const appRoutes: Routes = [
-    { path: '',  redirectTo: '/boton-buscar', pathMatch: 'full' },
-    { path: '',  redirectTo: '/cambia-password', pathMatch: 'full' },
+    { path: '',  redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent }
 

@@ -23,8 +23,13 @@ export class AlertService {
         });
     }
 
+<<<<<<< HEAD
     success(message: string, keepAfterNavigationChange = false) {
         //alert(message+' '+keepAfterNavigationChange+' dentro del service');
+=======
+    success(message: string, keepAfterNavigationChange = false ){
+        alert(message+' '+keepAfterNavigationChange+' dentro del service');
+>>>>>>> f6acea8ef0e154c0b15e30c4a5ae521b346b124f
         this.keepAfterNavigationChange = keepAfterNavigationChange;
         this.subject.next({ type: 'success', text: message, fade: 'true', in:'true' });
     }
