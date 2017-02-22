@@ -23,13 +23,13 @@ export class AlertService {
         });
     }
 
-    success(message: string, keepAfterNavigationChange = true) {
+    success(message: string, keepAfterNavigationChange = false ){
         alert(message+' '+keepAfterNavigationChange+' dentro del service');
         this.keepAfterNavigationChange = keepAfterNavigationChange;
         this.subject.next({ type: 'success', text: message, fade: 'true', in:'true' });
     }
 
-    error(message: string, keepAfterNavigationChange = true) {
+    error(message: string, keepAfterNavigationChange = false) {
         this.keepAfterNavigationChange = keepAfterNavigationChange;
         this.subject.next({ type: 'error', text: message, fade: 'true', in:'true' });
     }

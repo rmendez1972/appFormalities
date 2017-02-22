@@ -34,18 +34,21 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(
                 data => {
-                    this.router.navigate([this.returnUrl]);
+
                     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-                    if (JSON.stringify(this.currentUser).length > 2) {
-                        this.alertService.success("Autenticado exitosamente...");
+                    if (JSON.stringify(this.currentUser).length > 10) {
+                        this.alertService.success("Autenticado exitosamente...",true);
+                        this.router.navigate(['/boton-buscar']);
                     }else{
-
-                        this.alertService.error("email y/o password erroneos, intenta de nuevo...");
-                        this.loading = false;
+                        alert('entrando al else');
+                        this.router.navigate(['boton-buscar']);
                         this.authenticationService.logout();
+                        this.alertService.error("email y/o password erroneos, intenta de nuevo...",true);
+                        this.loading = false;
 
-                        this.router.navigate(['/']);
+
+
                     }
 
 
