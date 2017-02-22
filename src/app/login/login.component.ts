@@ -38,10 +38,15 @@ export class LoginComponent implements OnInit {
                     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
                     if (JSON.stringify(this.currentUser).length > 10) {
-                        this.alertService.success("Autenticado exitosamente...",true);
                         this.router.navigate(['/boton-buscar']);
+                        this.alertService.success("Autenticado exitosamente...");
+
                     }else{
 
+<<<<<<< HEAD
+=======
+                        this.router.navigate(['/login']);
+>>>>>>> f5b449487558c18f7a3b7702f192191d8f16901e
                         this.authenticationService.logout();
                         this.alertService.error("email y/o password erroneos, intenta de nuevo...",true);
                         this.loading = false;

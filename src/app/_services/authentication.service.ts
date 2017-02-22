@@ -29,7 +29,10 @@ export class AuthenticationService {
 
                 //let connection: MockConnection;
                 //connection.mockError(new Error('Username or password is incorrect'));
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5b449487558c18f7a3b7702f192191d8f16901e
                 //alert('user.user '+JSON.stringify(user.user).length);
                 if (JSON.stringify(user.user).length > 10) {
 
@@ -37,11 +40,16 @@ export class AuthenticationService {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user.user));
                 }
+<<<<<<< HEAD
                 else{
                     //alert('dentro de else en el service');
+=======
+                /*else{
+                    alert('dentro de else en el service');
+>>>>>>> f5b449487558c18f7a3b7702f192191d8f16901e
                     localStorage.setItem('currentUser', JSON.stringify(user.user));
                     //this.logout();
-                }
+                }*/
 
 
             });
