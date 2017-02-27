@@ -29,7 +29,11 @@ import { ContactoModule } from './contacto/contacto.module';
 import { BotonBuscarModule } from './boton-buscar/boton-buscar.module';
 import { CambiaPasswordComponent } from './cambia-password/cambia-password.component';
 import { CambiaPasswordModule } from './cambia-password/cambia-password.module';
+
+
 //import { BuscarSolicitudComponent } from './buscar-solicitud/buscar-solicitud.component';
+
+
 
 
 
@@ -57,6 +61,7 @@ import { CambiaPasswordModule } from './cambia-password/cambia-password.module';
     BotonBuscarModule,
     ContactoModule,
     CambiaPasswordModule
+
   ],
   providers: [
     AuthGuard,

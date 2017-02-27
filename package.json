@@ -20,8 +20,13 @@
     "@angular/platform-browser": "2.2.1",
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/router": "3.2.1",
+<<<<<<< HEAD
     "angular2-text-equality-validator": "^1.0.2",
+=======
+    "angular2-google-maps": "^0.17.0",
+>>>>>>> 72d2ffbb0627bc3f5735ab6098d2341e14e2fff0
     "core-js": "^2.4.1",
+    "ng2-validation": "^3.8.0",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"

@@ -2,6 +2,8 @@ import { Component, OnInit, HostBinding, trigger, transition, animate, style, st
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 
+
+
 @Component({
   selector:    'app-contacto',
   templateUrl: './contacto.component.html',
@@ -52,5 +54,9 @@ export class ContactoComponent implements OnInit {
   }
 
   title = 'Contacto';
-
+  // google maps zoom level
+  zoom: number = 17;
+  lat: number = 18.49926214;
+  lng: number = -88.31169829;
+  label: string ="SEDUVI"
 }
