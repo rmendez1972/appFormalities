@@ -7,16 +7,7 @@ import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 
 
-//
-import { EqualValidator } from './equal-validator.directive';
-import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validator, provideForms} from '@angular/forms';
-
-
 @Component({
-  //
-  moduleId: module.id,
-  directives: [EqualValidator],
-  //
   selector: 'app-cambia-password',
   templateUrl: './cambia-password.component.html',
   styleUrls: ['./cambia-password.component.css'],
@@ -50,8 +41,6 @@ export class CambiaPasswordComponent implements OnInit {
      @HostBinding('@routeAnimation') get routeAnimation() {
     return true;
   }
-signUpForm: FormGroup;
-
   @HostBinding('style.display') get display() {
     return 'block';
   }
