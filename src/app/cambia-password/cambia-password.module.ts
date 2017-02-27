@@ -4,6 +4,8 @@ import { FormsModule }    from '@angular/forms';
 import { CambiaPasswordComponent }  from './cambia-password.component';
 import { CambiaPasswordRoutingModule } from './cambia-password-routing.module';
 import { CambioPasswordService } from '../_services/index';
+import { CustomFormsModule } from 'ng2-validation';
+
 
 
 
@@ -11,7 +13,9 @@ import { CambioPasswordService } from '../_services/index';
   imports: [
     CommonModule,
     FormsModule,
-    CambiaPasswordRoutingModule
+    CambiaPasswordRoutingModule,
+    CustomFormsModule
+
 
   ],
   declarations: [
@@ -19,7 +23,7 @@ import { CambioPasswordService } from '../_services/index';
 
   ],
   providers: [
-    CambioPasswordService 
+    CambioPasswordService
 
   ]
 })
