@@ -43,13 +43,9 @@ export class LoginComponent implements OnInit {
 
                     }else{
 
-                        this.router.navigate(['/login']);
                         this.authenticationService.logout();
                         this.alertService.error("email y/o password erroneos, intenta de nuevo...",true);
                         this.loading = false;
-
-
-
                     }
 
 

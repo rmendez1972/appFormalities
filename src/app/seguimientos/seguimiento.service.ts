@@ -87,7 +87,7 @@ export class SeguimientoService {
 
 
   private extractDataTram(res: Response) {
-    //alert(JSON.stringify(res));
+
 
    let body = res.json();
    console.log(body.tramite);

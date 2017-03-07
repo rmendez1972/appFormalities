@@ -30,6 +30,9 @@ import { BotonBuscarModule } from './boton-buscar/boton-buscar.module';
 import { CambiaPasswordComponent } from './cambia-password/cambia-password.component';
 import { CambiaPasswordModule } from './cambia-password/cambia-password.module';
 
+import { UploadModule } from './upload/upload.module';
+import { UploadComponent } from './upload/upload.component';
+
 
 //import { BuscarSolicitudComponent } from './buscar-solicitud/buscar-solicitud.component';
 
@@ -46,6 +49,7 @@ import { CambiaPasswordModule } from './cambia-password/cambia-password.module';
     LoginComponent,
     RegisterComponent,
     MenuComponent
+    //UploadComponent
    // CambiaPasswordComponent
     //BotonBuscarComponent
 
@@ -60,7 +64,9 @@ import { CambiaPasswordModule } from './cambia-password/cambia-password.module';
     AdjuntosModule,
     BotonBuscarModule,
     ContactoModule,
-    CambiaPasswordModule
+    CambiaPasswordModule,
+    UploadModule
+    
 
   ],
   providers: [
@@ -72,7 +78,7 @@ import { CambiaPasswordModule } from './cambia-password/cambia-password.module';
     // providers used to create fake backend
     //fakeBackendProvider,
     MockBackend,
-    BaseRequestOptions
+    BaseRequestOptions,
   ],
 
   bootstrap: [AppComponent, MenuComponent]

@@ -41,7 +41,6 @@ export class CambiaPasswordComponent implements OnInit {
      @HostBinding('@routeAnimation') get routeAnimation() {
     return true;
   }
-
   @HostBinding('style.display') get display() {
     return 'block';
   }
@@ -86,7 +85,6 @@ export class CambiaPasswordComponent implements OnInit {
 
     //CambiaPassword(id_solicitante:string, password:string, new_password:string) {
     CambiaPassword() {
-
 
         this.loading = true;
 

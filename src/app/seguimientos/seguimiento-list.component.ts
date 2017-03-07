@@ -7,6 +7,8 @@ import { SeguimientoService} from './seguimiento.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 //import { AuthGuard } from '../_guards/index';
 
+//import { UploadComponent} from '../upload/upload.component';
+
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { AlertService} from '../_services/index';
@@ -199,5 +201,6 @@ export class SeguimientoListComponent implements OnInit {
     }
 
     isSelected(seguimiento: Seguimiento) {/*alert ('dentro hero.id'+hero.id+' selectedId '+this.selectedId);*/ return seguimiento.id_seguimiento === this.selectedId; }
+
 
 }
