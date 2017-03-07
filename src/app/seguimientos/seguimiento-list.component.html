@@ -17,7 +17,7 @@
   <table class="table table-condensed table-hover">
   	<thead  style="color: #7b7d80;">
   		<th width="25%">Fecha</th>
-  		<th width="50%">Observaciones</th>
+  		<th width="45%">Observaciones</th>
   		<th width="10%">Estatus</th>
   		<th width="10%">Adjunto?</th>
   		<th width="10%">Acciones</th>
@@ -25,15 +25,19 @@
   	<tbody *ngFor="let seguimiento of seguimientos">
   		<tr>
   			<td width="25%">{{seguimiento.fecha}}</td>
-  			<td width="50%">{{seguimiento.observaciones}}</td>
+  			<td width="45%">{{seguimiento.observaciones}}</td>
   			<td width="10%">{{seguimiento.estatus}}</td>
   			<td width="10%" [ngSwitch]="seguimiento.adjunto" style="text-align:center;">
-  				<span *ngSwitchCase="true"><img src="../assets/img/ok.png" ></span>
+  				<span *ngSwitchCase="true"><img src="../assets/img/ok.png" width="16px" height="16px"></span>
           <!--<span *ngSwitchCase="true"><i class="icon-checkmark" style="font-size:1.2em;"></i></span>-->
     				<span *ngSwitchCase="false"><img src="../assets/img/mal.png" ></span>
             <!--<span *ngSwitchCase="false"><i class="icon-cross" ></i></span>-->
     			</td>
-  			<td width="5%"><img src="../assets/img/reporte_adjuntos.png" width="26px" height="26px" (click)="onSelect(seguimiento)" ></td>
+  			<td width="10%"><img src="../assets/img/reporte_adjuntos.png" width="26px" height="26px" (click)="onSelect(seguimiento)" >
+						<!--<a  href=""><img src="../assets/img/upload.png" width="26x" height="26px" (click)="onSelect(upload)"></a>-->
+
+						<a [routerLink]="['/upload']"><img src="../assets/img/upload.png" width="26x" height="26px"></a>
+				</td>
   		</tr>
   	</tbody>
   </table>

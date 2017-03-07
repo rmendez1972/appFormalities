@@ -8,6 +8,7 @@ public URLadjuntosdescarga: String;
 public URLbuscarsolicitud: String;
 public URLlogin: String;
 public URLcambiapassword: String;
+public URLupload: String;
 
 constructor() {}
 
@@ -30,6 +31,10 @@ constructor() {}
 
 		getUrlCambiaPassword():String{
 	  			return this.URLcambiapassword='http://localhost:8083/tramites/controladorregistro?operacion=apiSolicitanteCambioPassword&id_solicitante=';
+	  	}
+
+		  getUrlupload():String{
+	  			return this.URLupload='http://localhost:8083/tramites/controladoradjunto?operacion=grabarfromApp';
 	  	}
 
 
