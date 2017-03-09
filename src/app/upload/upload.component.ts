@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 import { FileUploader } from 'ng2-file-upload';
 
 import {NgZone} from '@angular/core';
-import {UPLOAD_DIRECTIVES} from 'ng2-uploader';
+//import {UPLOAD_DIRECTIVES} from 'ng2-uploader';
 //import {bootstrap} from "angular2/platform/browser"
 
 import { ServiceUrl } from '../serviceUrl';
@@ -124,12 +124,12 @@ export class UploadComponent  implements OnInit {
    ngOnInit() {
    alert(this.uploadUrl)
     console.log(this.uploadUrl);
-     var headers = new Headers();
-     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-     headers.append('Access-Control-Allow-Origin','http://localhost:4200');
-     let options = new RequestOptions({ headers: headers });
-    this.uploader = new FileUploader({url:'http://localhost:8083/tramites/controladoradjunto?operacion=grabarfromApp'});
-    
+     //var headers = new Headers();
+     //headers.append('Content-Type', 'application/x-www-form-urlencoded');
+     //headers.append('Access-Control-Allow-Origin','http://localhost:4200');
+     //let options = new RequestOptions({ headers: headers });
+    this.uploader = new FileUploader({url:this.uploadUrl});
+     
   }
  
 }
