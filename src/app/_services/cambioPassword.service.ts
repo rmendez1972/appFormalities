@@ -19,15 +19,16 @@ export class CambioPasswordService {
  		return this.http.get(this.cambiaPasswordUrl+id_solicitante+"&new_password="+new_password)
         .map(this.extractData)
         .catch(this.handleError);
-                                       
+
 	  }
 
     private extractData(res: Response) {
 
     let body = res.json();
-       
+    console.log (body);
+
     return body.respuesta || { };
-    
+
   }
 
   private handleError (error: Response | any) {
@@ -45,5 +46,5 @@ export class CambioPasswordService {
     return Observable.throw(errMsg);
 
   }
-    
+
 }
