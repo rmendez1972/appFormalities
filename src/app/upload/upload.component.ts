@@ -1,16 +1,16 @@
 
 import { Component, OnInit, HostBinding, trigger, transition, animate, style, state } from '@angular/core';
-import { Headers, RequestOptions } from '@angular/http';
+import { RequestOptions } from '@angular/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../_models/index';
 import { AlertService, UploadService } from '../_services/index';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 //
-import { FileUploader } from 'ng2-file-upload';
+import { FileUploader, Headers } from 'ng2-file-upload';
 
 import {NgZone} from '@angular/core';
-import {UPLOAD_DIRECTIVES} from 'ng2-uploader';
+//import {UPLOAD_DIRECTIVES} from 'ng2-uploader';
 //import {bootstrap} from "angular2/platform/browser"
 
 import { ServiceUrl } from '../serviceUrl';
@@ -30,7 +30,7 @@ import { ServiceUrl } from '../serviceUrl';
   selector: 'app-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.css'],
-  
+
     animations: [
     trigger('routeAnimation', [
       state('*',
@@ -119,17 +119,21 @@ export class UploadComponent  implements OnInit {
  public uploadUrl: string;
 
  public uploader:FileUploader;
- constructor(private url:ServiceUrl) { this.uploadUrl=String(this.url.getUrlupload());} 
-   
+ public uploaderOptions: Array<any>;
+ constructor(private url:ServiceUrl) { this.uploadUrl=String(this.url.getUrlupload());}
+
    ngOnInit() {
-   alert(this.uploadUrl)
-    console.log(this.uploadUrl);
-     var headers = new Headers();
-     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-     headers.append('Access-Control-Allow-Origin','http://localhost:4200');
-     let options = new RequestOptions({ headers: headers });
-    this.uploader = new FileUploader({url:'http://localhost:8083/tramites/controladoradjunto?operacion=grabarfromApp'});
-    
+
+    //this.uploader = new FileUploader({});
+
+    //this.uploader.onBeforeUploadItem = (item) => {
+    //  item.withCredentials = false;
+    //}
+    //this.uploader.setOptions({url: this.uploadUrl,  method: 'POST', headers:[{name:'Access-Control-Allow-Origin', value: 'http://localhost:4200'}, {name:'Access-Control-Allow-Methods', value: 'POST, GET'}, {name:'Access-Control-Allow-Headers', value: 'Origin, X-Requested-With, Content-Type, Accept'}  ]});
+    //this.uploader.onAfterAddingFile = (file)=> { file.withCredentials = false; };
+    this.uploader = new FileUploader({url:this.uploadUrl} );
+    //public uploader:FileUploader = new FileUploader( {url: URL}, {headers: [{name:'Content-Type', value:'application/json'}, {name: 'x-auth-token', value: this.adminToken}] } );
+
   }
- 
+
 }
