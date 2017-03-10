@@ -9,6 +9,7 @@ public URLbuscarsolicitud: String;
 public URLlogin: String;
 public URLcambiapassword: String;
 public URLupload: String;
+public URLfilename: String;
 
 constructor() {}
 
@@ -33,10 +34,11 @@ constructor() {}
 	  			return this.URLcambiapassword='http://localhost:8080/Tramites/controladorregistro?operacion=apiSolicitanteCambioPassword&id_solicitante=';
 	  	}
 
-		  getUrlupload():String{
+		getUrlupload():String{
 	  			return this.URLupload='http://localhost:3001/upload';
 	  	}
-
-
-
+		
+		getUrlfilename():String{
+	  			return this.URLupload='http://localhost:8083/tramites/controladoradjunto?operacion=grabarfromApp&id_seguimiento=';
+	  	}
 }

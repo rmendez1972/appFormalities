@@ -26,7 +26,7 @@
   		<tr>
   			<td width="25%">{{seguimiento.fecha}}</td>
   			<td width="45%">{{seguimiento.observaciones}}</td>
-  			<td width="10%">{{seguimiento.estatus}}</td>
+  			<td width="10%">{{seguimiento.estatus}} {{seguimiento.id_seguimiento}}</td>
   			<td width="10%" [ngSwitch]="seguimiento.adjunto" style="text-align:center;">
   				<span *ngSwitchCase="true"><img src="../assets/img/ok.png" width="16px" height="16px"></span>
           <!--<span *ngSwitchCase="true"><i class="icon-checkmark" style="font-size:1.2em;"></i></span>-->
@@ -36,7 +36,8 @@
   			<td width="10%"><img src="../assets/img/reporte_adjuntos.png" width="26px" height="26px" (click)="onSelect(seguimiento)" >
 						<!--<a  href=""><img src="../assets/img/upload.png" width="26x" height="26px" (click)="onSelect(upload)"></a>-->
 
-						<a [routerLink]="['/upload']"><img src="../assets/img/upload.png" width="26x" height="26px"></a>
+						<!--<a [routerLink]="['/upload/30']"><img src="../assets/img/upload.png" width="26x" height="26px"></a>-->
+						<a><img src="../assets/img/upload.png" width="26x" height="26px" (click)="onSelect2(seguimiento)"></a>
 				</td>
   		</tr>
   	</tbody>
