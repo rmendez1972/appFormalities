@@ -5,19 +5,17 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 import { User } from '../_models/index';
 import { ServiceUrl } from '../serviceUrl';
 import 'rxjs/add/operator/map'
-//import {Observable} from 'rxjs/Rx';
 import { AlertService} from '../_services/index';
 
 @Injectable()
 export class UploadService {
-    private uploadUrl: string;
+    private uploadUrlFileName: string;
 
-    constructor(private http: Http, private url:ServiceUrl) { this.uploadUrl=String(this.url.getUrlupload()); }
+    constructor(private http: Http, private url:ServiceUrl) { this.uploadUrlFileName=String(this.url.getUrlfilename()); }
 
-    upload(archivo:string): Observable<boolean[]> {
-    //alert (id_solicitante+" "+password+" "+new_password);
- 		//return this.http.get(this.uploadUrl+id_solicitante+"&new_password="+new_password)
-        return this.http.get(this.uploadUrl+archivo) 
+    filename(archivo:string, id_seguimiento: number): Observable<boolean[]> {
+        console.log("Imprimiendo nombre archivo y id seguimeinto: "+archivo+" "+id_seguimiento)
+        return this.http.get(this.uploadUrlFileName+id_seguimiento+"&filename="+archivo) 
         .map(this.extractData)
         .catch(this.handleError);
                                        

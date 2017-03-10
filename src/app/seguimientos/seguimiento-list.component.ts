@@ -68,6 +68,8 @@ export class SeguimientoListComponent implements OnInit {
   private z: Observable<Tramite[]>;
   private a: Observable<Seguimiento[]>;
 
+  private e: Observable<Seguimiento[]>;
+
   private selectedId: number;
   private idSolicitud: number;
   private idsolicitud:number;
@@ -198,6 +200,10 @@ export class SeguimientoListComponent implements OnInit {
 
   	onSelect(seguimiento: Seguimiento) {
     	this.router.navigate(['/adjunto', seguimiento.id_seguimiento, this.idsolicitud]);
+    }
+
+    onSelect2(seguimiento:Seguimiento) {
+    	this.router.navigate(['/upload', seguimiento.id_seguimiento]);
     }
 
     isSelected(seguimiento: Seguimiento) {/*alert ('dentro hero.id'+hero.id+' selectedId '+this.selectedId);*/ return seguimiento.id_seguimiento === this.selectedId; }

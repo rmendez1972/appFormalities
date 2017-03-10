@@ -74,8 +74,6 @@ export class CambiaPasswordComponent implements OnInit {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
         for (var elemento in this.currentUser) {
-          //this.id=elemento["id"];
-          //alert(this.currentUser[elemento].id);
           this.id=this.currentUser[elemento].id
         }
 
