@@ -1,13 +1,13 @@
 
 import { Component, OnInit, HostBinding, trigger, transition, animate, style, state } from '@angular/core';
-import { RequestOptions } from '@angular/http';
+import { RequestOptions, Headers } from '@angular/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../_models/index';
 import { AlertService, UploadService } from '../_services/index';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 //
-import { FileUploader, Headers } from 'ng2-file-upload';
+import { FileUploader } from 'ng2-file-upload';
 
 import {NgZone} from '@angular/core';
 //import {UPLOAD_DIRECTIVES} from 'ng2-uploader';
@@ -126,12 +126,12 @@ export class UploadComponent  implements OnInit {
 
    alert(this.uploadUrl)
     console.log(this.uploadUrl);
-     //var headers = new Headers();
-     //headers.append('Content-Type', 'application/x-www-form-urlencoded');
-     //headers.append('Access-Control-Allow-Origin','http://localhost:4200');
-     //let options = new RequestOptions({ headers: headers });
+     var headers = new Headers();
+     headers.append('Content-Type', 'application/x-www-form-urlencoded');
+     headers.append('Access-Control-Allow-Origin','http://localhost:4200');
+     let options = new RequestOptions({ headers: headers });
     this.uploader = new FileUploader({url:this.uploadUrl});
-     
+
 
   }
 
