@@ -26,7 +26,7 @@
   		<tr>
   			<td width="25%">{{seguimiento.fecha}}</td>
   			<td width="45%">{{seguimiento.observaciones}}</td>
-  			<td width="10%">{{seguimiento.estatus}} {{seguimiento.id_seguimiento}}</td>
+  			<td width="10%">{{seguimiento.estatus}}</td>
   			<td width="10%" [ngSwitch]="seguimiento.adjunto" style="text-align:center;">
   				<span *ngSwitchCase="true"><img src="../assets/img/ok.png" width="16px" height="16px"></span>
           <!--<span *ngSwitchCase="true"><i class="icon-checkmark" style="font-size:1.2em;"></i></span>-->

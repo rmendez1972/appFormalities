@@ -5,6 +5,7 @@ export class ServiceUrl {
 public URL: String;
 public URLadjuntos: String;
 public URLadjuntosdescarga: String;
+public URLadjuntosupload: String;
 public URLbuscarsolicitud: String;
 public URLlogin: String;
 public URLcambiapassword: String;
@@ -24,6 +25,10 @@ constructor() {}
 
 	  	getUrladjuntosdescarga():String{
 	  			return this.URLadjuntosdescarga='http://localhost:8083/tramites/adjuntos/';
+	  	}
+		
+		getUrladjuntosupload():String{
+	  			return this.URLadjuntosupload='http://localhost:3001/upload/';
 	  	}
 
 	  	getUrllogin():String{

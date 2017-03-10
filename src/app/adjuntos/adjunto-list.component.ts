@@ -64,6 +64,7 @@ export class AdjuntoListComponent implements OnInit {
   private z: Observable<Tramite[]>;
   private a: Observable<Seguimiento[]>;
   private adjuntosruta: string;
+  private adjuntosupload: string;
 
 
   private selectedId: number;
@@ -94,6 +95,7 @@ export class AdjuntoListComponent implements OnInit {
       this.getTramite();
       this.getSeguimiento();
       this.getAdjuntosruta();
+      this.getAdjuntosupload();
 
     };
 
@@ -105,6 +107,10 @@ export class AdjuntoListComponent implements OnInit {
 
     getAdjuntosruta(){this.adjuntosruta=String(
       this.adjuntoservice.getAdjuntosruta());
+  }
+
+  getAdjuntosupload(){this.adjuntosupload=String(
+      this.adjuntoservice.getAdjuntosupload());
   }
 
     getAdjuntos() {
