@@ -16,18 +16,21 @@ export class AdjuntoService {
 
    private adjuntosUrl :string;
    private adjuntosdescarga :string;
+   private adjuntosupload :string;
 
 
 
    constructor (private http: Http, private url:ServiceUrl) {
      this.adjuntosUrl=String(this.url.getUrladjuntos());
      this.adjuntosdescarga=String(this.url.getUrladjuntosdescarga());
+     this.adjuntosupload=String(this.url.getUrladjuntosupload());
 
 
    }
 
 
   getAdjuntosruta(){return this.adjuntosdescarga}
+  getAdjuntosupload(){return this.adjuntosupload}
 
 	//getAdjuntos
   getAdjuntos(id: number): Observable<Adjunto[]> {

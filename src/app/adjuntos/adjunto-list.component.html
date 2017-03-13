@@ -26,10 +26,32 @@
   	<tbody *ngFor="let adjunto of adjuntos">
   		<tr>
 
-  			<td width="50%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
-  			<td width="25%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></td>
+  			<!--<td width="50%"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
+				<td width="25%"><span *ngIF="adjunto.id_usuario=20"><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a></span></td>
+  			<td width="25%">{{adjunto.nombreusuario}}</td>-->
+				<td width="50%" ><a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" >{{adjunto.nombre}}</a></td>
+				<td width="25%" *ngIf="adjunto.nombreusuario!='CIUDADANO'">
+					<a href="{{adjuntosruta}}{{adjunto.nombre}}" download="{{adjuntosruta}}{{adjunto.nombre}}" ><img src="../assets/img/download.png" width="26px" height="26px" style="text-align:right"/></a>
+					
+				</td>
+
+				<td width="25%" *ngIf="adjunto.nombreusuario=='CIUDADANO'">
+					<a href="{{adjuntosupload}}{{adjunto.nombre}}" download="{{adjuntosupload}}{{adjunto.nombre}}" ><img src="../assets/img/upload.png" width="26px" height="26px" style="text-align:right"/></a>
+					
+				</td>
+				
   			<td width="25%">{{adjunto.nombreusuario}}</td>
   		</tr>
+
+<!--
+	td width="10%" [ngSwitch]="seguimiento.adjunto" style="text-align:center;">
+  				<span *ngSwitchCase="true"><img src="../assets/img/ok.png" width="16px" height="16px"></span>
+          
+    				<span *ngSwitchCase="false"><img src="../assets/img/mal.png" ></span>
+          
+    			</td>
+-->
+
   	</tbody>
   </table>
 </div>
