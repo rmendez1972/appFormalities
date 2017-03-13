@@ -6,13 +6,9 @@ import { User } from '../_models/index';
 import { AlertService, UploadService } from '../_services/index';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
-<<<<<<< HEAD
-//
+
 import { FileUploader } from 'ng2-file-upload';
 
-=======
-import { FileUploader, Headers } from 'ng2-file-upload';
->>>>>>> be7836ed29567343220c9b8828339bb5551c41fb
 import {NgZone} from '@angular/core';
 import { ServiceUrl } from '../serviceUrl';
 
@@ -76,32 +72,22 @@ export class UploadComponent  implements OnInit {
    private route: ActivatedRoute,
    private router: Router,
    private uploadservice: UploadService,
-   private alertService:AlertService) 
-   { 
+   private alertService:AlertService)
+   {
      this.uploadUrl=String(this.url.getUrlupload());
-     this.idseguimiento= this.route.snapshot.params['id_seguimiento']; 
-    
+     this.idseguimiento= this.route.snapshot.params['id_seguimiento'];
+
   }
   ngOnInit() {
 
-   //alert(this.uploadUrl);
-    console.log(this.uploadUrl);
-<<<<<<< HEAD
-     var headers = new Headers();
-     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-     headers.append('Access-Control-Allow-Origin','http://localhost:4200');
-     let options = new RequestOptions({ headers: headers });
+
     this.uploader = new FileUploader({url:this.uploadUrl});
 
-
-=======
-    this.uploader = new FileUploader({url:this.uploadUrl});
->>>>>>> be7836ed29567343220c9b8828339bb5551c41fb
   }
-  
+
 FileName(index: number) {
     //console.log("Imprimiendo FileUploader: "+this.uploader.queue[index].file.name);
-      
+
         this.x=this.route.params
         .switchMap ((params: Params)=>
         {

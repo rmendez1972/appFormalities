@@ -37,8 +37,8 @@ constructor() {}
 		getUrlupload():String{
 	  			return this.URLupload='http://localhost:3001/upload';
 	  	}
-		
+
 		getUrlfilename():String{
-	  			return this.URLupload='http://localhost:8083/tramites/controladoradjunto?operacion=grabarfromApp&id_seguimiento=';
+	  			return this.URLupload='http://localhost:8080/Tramites/controladoradjunto?operacion=grabarfromApp&id_seguimiento=';
 	  	}
 }
