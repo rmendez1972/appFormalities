@@ -72,8 +72,8 @@ export class SeguimientoListComponent implements OnInit {
 
   private selectedId: number;
   private idSolicitud: number;
-  private idsolicitud:number;
-  private idsolicitante:number;
+  public idsolicitud:number;
+  public idsolicitante:number;
 
 
   	constructor(
@@ -202,8 +202,9 @@ export class SeguimientoListComponent implements OnInit {
     	this.router.navigate(['/adjunto', seguimiento.id_seguimiento, this.idsolicitud]);
     }
 
-    onSelect2(seguimiento:Seguimiento) {
-    	this.router.navigate(['/upload', seguimiento.id_seguimiento]);
+    onSelect2(seguimiento: Seguimiento) {
+      console.log(seguimiento.id_seguimiento, seguimiento.observaciones, seguimiento.estatus);
+    	this.router.navigate(['/upload', seguimiento.id_seguimiento, this.idsolicitud, this.idsolicitante]);
     }
 
     isSelected(seguimiento: Seguimiento) {/*alert ('dentro hero.id'+hero.id+' selectedId '+this.selectedId);*/ return seguimiento.id_seguimiento === this.selectedId; }

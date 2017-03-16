@@ -51,7 +51,7 @@ export class AdjuntoListComponent implements OnInit {
   @HostBinding('style.position') get position() {
     return 'relative';
   }
-
+ 
   private errorMessage: string;
   private adjuntos: Adjunto[];
   private solicitudes: Solicitud[];
@@ -68,9 +68,9 @@ export class AdjuntoListComponent implements OnInit {
 
 
   private selectedId: number;
-  private selectedIdSol: number;
+  public selectedIdSol: number;
   currentUser:Array<any>;
-  private idSolicitante:number;
+  public idSolicitante:number;
 
 
 
@@ -180,22 +180,10 @@ export class AdjuntoListComponent implements OnInit {
                        error =>  this.errorMessage = <any>error);
 
     };
-
-
-
-    gotoSeguimientos() {
-    //let seguimientoId = this.adjuntos ? this.adjuntos.id_seguimiento : null;
-    // Pass along the hero id if available
-    // so that the HeroList component can select that hero.
+ gotoSeguimientos() {
 
     this.router.navigate(['/seguimientos',this.selectedIdSol,this.idSolicitante]);
   }
 
-
-  	/*onSelect(seguimiento: Seg) {
-    	this.router.navigate(['/adjunto', seguimiento.id_seguimiento]);
-	  }
-
-    */
 
 }

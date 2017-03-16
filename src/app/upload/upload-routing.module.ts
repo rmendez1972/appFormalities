@@ -5,7 +5,7 @@ import { UploadComponent }    from './upload.component';
 
 const uploadRoutes: Routes = [  
 
-  { path: 'upload/:id_seguimiento', component:  UploadComponent, canActivate: [AuthGuard] }
+  { path: 'upload/:id_seguimiento/:id_solicitud/:id_solicitante', component:  UploadComponent, canActivate: [AuthGuard] }
 
 ];
 

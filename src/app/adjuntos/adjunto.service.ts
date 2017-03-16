@@ -51,9 +51,10 @@ export class AdjuntoService {
   //getSolicitudes
   getSolicitudes(id: number): Observable<Solicitud[]> {
     //alert('dentro de getsolicitudes');
+    console.log("dentro del service");
      return this.http.get(this.adjuntosUrl+id)
                     .map(this.extractDataSolic)
-                    .catch(this.handleError);
+                    .catch(this.handleError);                    
   }
 
 
