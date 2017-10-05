@@ -12,14 +12,16 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "2.2.1",
-    "@angular/compiler": "2.2.1",
-    "@angular/core": "2.2.1",
-    "@angular/forms": "2.2.1",
-    "@angular/http": "2.2.1",
-    "@angular/platform-browser": "2.2.1",
-    "@angular/platform-browser-dynamic": "2.2.1",
-    "@angular/router": "3.2.1",
+    "@angular/animations": "^4.0.3",
+    "@angular/common": "4.1.0-rc.0",
+    "@angular/compiler": "4.1.0-rc.0",
+    "@angular/core": "4.1.0-rc.0",
+    "@angular/forms": "4.1.0-rc.0",
+    "@angular/http": "4.1.0-rc.0",
+    "@angular/platform-browser": "4.1.0-rc.0",
+    "@angular/platform-browser-dynamic": "4.1.0-rc.0",
+    "@angular/platform-server": "4.1.0-rc.0",
+    "@angular/router": "4.1.0-rc.0",
     "angular2-google-maps": "^0.17.0",
     "angular2-text-equality-validator": "^1.0.2",
     "core-js": "^2.4.1",
@@ -28,13 +30,14 @@
     "ng2-validation": "^3.8.0",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
+    "typescript": "2.2.2",
     "zone.js": "^0.6.23"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "2.2.1",
+    "@angular/cli": "^1.0.0",
+    "@angular/compiler-cli": "4.1.0-rc.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.21",
     "codelyzer": "~1.0.0-beta.3",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
@@ -48,5 +51,7 @@
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
     "webdriver-manager": "10.2.5"
+    
+    
   }
 }
