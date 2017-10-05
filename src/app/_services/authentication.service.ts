@@ -41,7 +41,7 @@ export class AuthenticationService {
                 else{
                     //alert('dentro de else en el service');
 
-           
+
                     localStorage.setItem('currentUser', JSON.stringify(user.user));
                     this.logout();
                 }
