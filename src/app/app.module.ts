@@ -34,7 +34,7 @@ import { CambiaPasswordModule } from './cambia-password/cambia-password.module';
 import { UploadModule } from './upload/upload.module';
 import { UploadComponent } from './upload/upload.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 //import { BuscarSolicitudComponent } from './buscar-solicitud/buscar-solicitud.component';
